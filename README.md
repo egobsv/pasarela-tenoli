@@ -1,62 +1,78 @@
 ## Instalación de Pasarela Tenoli
 
+  Esta son las instrucciones para instalar la pasarela de Tenoli en su institución. Puede [conocer más sobre Tenoli en esta página](http://tenoli.gobiernoelectronico.gob.sv/).
   
-**Requisitos:** Ubuntu Xenial LTS / Debian 8 o superior. 2GB Ram, 3GB HD.  
-El equipo puede ser una maquina virtual o un servidor físico dedicado.  
-  
-Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.  
-La IP de acceso público debe tener disponibles los siguientes puertos TCP:  
-Ingreso: 2080,5500, 5577, 9011  
-Egreso: 80,443,4001,4050-4055, 5500, 5577  
-  
-La IP de interna debe tener disponibles los siguientes puertos TCP:  
+**Requisitos:** 
+* Ubuntu Xenial LTS / Debian 8 o superior. 
+* Al menos 2GB Ram y 3GB de disco duro.  
+* Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.
+* La IP de acceso público debe tener disponibles los siguientes puertos TCP:  
+	 - Ingreso: 2080,5500, 5577, 9011  
+	- Egreso: 80,443,4001,4050-4055, 5500, 5577  
+* La IP de interna debe tener disponibles los siguientes puertos TCP:  
 Ingreso: 80,443
+
+El equipo puede ser una maquina virtual o un servidor físico dedicado.  
+   
+**Descargar Archivos**
+Antes de iniciar debe obtener los archivos de instalacion, puede hacerlo con los siguientes comandos:
+```
+~# cd /opt/
+~# wget https://github.com/egobsv/pasarela-tenoli/archive/master.zip
+~# unzip master.zip
+~# chmod +x instalar.sh
+~# ./instalar.sh
+```
 **Inicializar Pasarela**
 
-La configuración inicial necesita los parámetros de inicio definidos en el servidor central.  
-Esta información, guardada en un archivo XML conocido como ‘ancla de configuración’, está [disponible aqui.](http://190.5.135.94/instalar/TENOLI-Ancla-de-Configuracion-20170307.xml)  
+Conéctese a la pasarela desde el navegador https://[mipasarela].[institucion].gob.sv:4000/
+
+Use las credenciales que creó en el paso anterior, el sistema ingresa y pide el ancla de configuración inicial.
+El ancla de  configuración inicial contiene los parámetros de inicio definidos en el servidor central.  Esta información, guardada en un archivo XML conocido como ‘ancla de configuración’, está [disponible aquí.](http://190.5.135.94/instalar/TENOLI-Ancla-de-Configuracion-20170307.xml)  
   
-Antes de continuar descargue y guarde este archivo en su maquina.
+Descargue, guarde este archivo en su máquina y luego regrese a la página de configuración de su pasarela para que pueda importar el ancla de configuración inicial.
 
-Conectese a la pasarela desde el navegador https://[mipasarela].[institucion].gob.sv:4000/
+* Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para MINED el código es 4100.
 
-Importar ancla de configuración inicial.
+* Ingrese nombre de dominio público que se asigno durante la instalación Ej. [mipasarela].[institucion].gob.sv
 
-Ingresar el código presupuestario de la institución, por ejemplo 4100 para MINEC.
+* Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
 
-Asignar nombre de dominio público que se asigno durante la instalación Ej. [mipasarela].[institucion].gob.sv
-
-Asignar el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
-
-Presionar 'Continuar', con esto se inicializa la plataforma y entramos por primera vez.  
+* Presionar 'Continuar', para guardar los cambios y entrar por primera vez.  
   
-Una vez dentro, desde el Menú Principal, seleccionar 'Parámetros del Sistema', agregar servicio de sellado de tiempo.
+* Una vez dentro, desde el Menú Principal, seleccionar 'Parámetros del Sistema', agregue el servicio de sellado de tiempo.
 
+* En la parte superior de la pantalla tendrá una aviso que le indica que necesita ingresar su número PIN, presiónelo e ingrese el código que ingreso en la pantalla inicial.
   
 **6. Registrar Pasarela**
 
-En este último paso se solicitara el registro de nuestra pasarela para que pueda unirse a la red Tenoli.  
-Este registro se hace a través de certificados de firma electrónica simple y es aprobado desde el servidor central.  
+Para terminar, es necesario registrar nuestra pasarela para que pueda unirse a la red Tenoli.  
+Este registro se hace a través de certificados de Firma Electrónica Simple  y es aprobado desde la Autoridad Certificadora de SETEPLAN.  
 Para iniciar este registro ingrese a la sección de 'Llaves y certificados' y genere las solicitudes de registro siguientes usando los datos de su institución.
 
-_Solicitud de Certificado de Identidad_  
-Generar llave, generar petición de certificado con el siguiente sujeto:  
-Formato: C=SV,O=Gobierno de El Salvador,OU=[institucion],CN=[mipasarela].[institucion].gob.sv,serialNumber=SV/[mipasarela]/GOB  
-  
-Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=pasarela.minec.gob.sv,serialNumber=SV/pasarela.minec.gob.sv/GOB
+* Certificado de Autorización - Este certificado será utilizado por las instituciones miembro de la red Tenoli para identificar a su pasarela. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar Petición de Certificado', y en el recuadro a continuación:
+seleccione 'autorizar', en el campo sujeto ingrese un valor en el siguiente formato: C=SV,O=Gobierno de El Salvador,OU=[institución],CN=tenoli.[institución].gob.sv,serialNumber=SV/tenoli.[institucion].gob.sv/GOB  
 
-_Solicitud de certificado de Firma_  
-Generar llave, generar petición de certificado con el siguiente sujeto:  
-Formato: C=SV,O=Gobierno de El Salvador,OU=[institucion],CN=[codigo presupesto],serialNumber=SV/[mipasarela]/GOB  
-  
-Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=4100,serialNumber=SV/pasarela.minec.gob.sv/GOB
+ Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=tenoli.[institución].gob.sv,serialNumber=SV/tenoli.[institución].gob.sv/GOB
 
-Las solicitudes de certificado deberán ser enviadas a las Secretaria Técnica al correo dquijada @ presidencia.gob.sv. Una vez  
-procesadas las solicitudes, se entregarán los certificados correspondientes que deberán ser instalados usando el botón 'importar certificado'.  
+
+* Certificado de Firma - Este certificado será utilizado por su pasarela para firmar mensajes. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar Petición de Certificado', y en el recuadro a continuación:
+seleccione 'Firma', en el campo sujeto ingrese un valor en el siguiente formato: C=SV,O=Gobierno de El Salvador,OU=[institución],CN=[código presupuesto],serialNumber=SV/tenoli.[institución].gob.sv/GOB  
   
-Con el certificado de Identidad, una vez importado, deberá realizarse el registro de nuestra pasarela. Seleccione el certificado Identidad, y presione el botón 'Activar' y luego 'Registrar'. El estado del certificado cambia 'registro en progreso'. Una vez la administración central de Tenoli autorice el registro, el estado cambiara a 'registrado'  
+Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=4100,serialNumber=SV/tenoli.minec.gob.sv/GOB
+
+El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas a SETEPLAN al correo dquijada @ presidencia.gob.sv. Una vez  
+procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
+
+**Finalizar Registro**
+
+Usando los certificados que recibió de SETEPLAN, ingrese a su pasarela, seleccione la opcion 'Llaves y certificados', presione el botón 'importar certificado' y luego importe su certificado de Autorización y Firma.  
   
-Es importante verificar que la pagina de diagnóstico no muestre errores. Si la pagina de diagnostico muestra alguna error (indicador rojo) revise firewall de su red, es probable que el se este boqueando alguna conexión.  
+Con el certificado de Identidad, una vez importado, deberá realizarse el registro de nuestra pasarela. Seleccione el certificado Identidad, y presione el botón 'Activar' y luego 'Registrar'. El estado del certificado cambia 'registro en progreso'. 
+
+Una vez la administración central de Tenoli autorice el registro, el estado cambiara a 'registrado'  
+  
+Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este boqueando alguna conexión.  
   
 Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](servicios.html) para consumir o compartir datos con otras instituciones.
 
