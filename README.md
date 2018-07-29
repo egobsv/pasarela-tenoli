@@ -66,9 +66,9 @@ procesadas las solicitudes, se entregarán los certificados para que pueda final
 
 **Finalizar Registro**
 
-Usando los certificados que recibió de SETEPLAN, ingrese a su pasarela, seleccione la opcion 'Llaves y certificados', presione el botón 'importar certificado' y luego importe su certificado de Autorización y Firma.  
+Usando los certificados que recibió de SETEPLAN, ingrese a su pasarela, seleccione la opcion 'Llaves y certificados', presione el botón 'importar certificado' y luego importe sus certificados de Autorización y Firma.  
   
-Con el certificado de Identidad, una vez importado, deberá realizarse el registro de nuestra pasarela. Seleccione el certificado Identidad, y presione el botón 'Activar' y luego 'Registrar'. El estado del certificado cambia 'registro en progreso'. 
+Con el certificado de Identidad, una vez importado, deberá realizarse el registro de su pasarela. Seleccione el certificado Identidad, y presione el botón 'Activar' y luego 'Registrar'. El estado del certificado cambia a 'registro en progreso'. 
 
 Una vez la administración central de Tenoli autorice el registro, el estado cambiara a 'registrado'  
   
