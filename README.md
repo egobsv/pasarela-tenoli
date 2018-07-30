@@ -19,8 +19,8 @@ Antes de iniciar debe obtener los archivos de instalacion, puede hacerlo con los
 ```
 ~# cd /opt/
 ~# wget https://github.com/egobsv/pasarela-tenoli/archive/master.zip
-~# unzip master.zip
-~# chmod +x instalar.sh
+~# unzip master.zip;mv pasarela-tenoli-master tenoli;
+~# cd /opt/tenoli; chmod +x instalar.sh
 ~# ./instalar.sh
 ```
 **Inicializar Pasarela**
