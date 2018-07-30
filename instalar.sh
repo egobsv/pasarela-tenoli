@@ -9,8 +9,11 @@ apt-get update;
 apt-get install -y openjdk-8-jre-headless ca-certificates-java crudini rlwrap ntp unzip expect authbind;
 apt-get install -y nginx-light postgresql postgresql-contrib postgresql-client libmhash2;
 cd /opt/tenoli;
+
+#MODIFIQUE EL ARCHIVO ANTES DE EJECUTAR ESTE COMANDO!!!
 debconf-set-selections ss-respuestas.txt;
 
+cd /opt/tenoli/debs; 
 dpkg -i xroad-common_6.7.13-1._amd64.deb xroad-jetty9_6.7.13-1._all.deb;
 dpkg -i xroad-proxy_6.7.13-1._all.deb;
 dpkg -i xroad-addon-proxymonitor_6.7.13-1._all.deb xroad-monitor_6.7.13-1._all.deb xroad-addon-messagelog_6.7.13-1._all.deb xroad-addon-metaservices_6.7.13-1._all.deb xroad-securityserver_6.7.13-1._all.deb;
