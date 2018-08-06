@@ -1,7 +1,7 @@
 
 ## Instalación de Pasarela Tenoli
 
-  Esta son las instrucciones para instalar la pasarela de Tenoli en su institución. Puede [conocer más sobre Tenoli en esta página](http://tenoli.gobiernoelectronico.gob.sv/).
+  Esta son las instrucciones para instalar la pasarela de Tenoli en su institución. Esta es la plataforma distribuida de itnercambio de información del Gobierno de El Salvador. Puede [conocer más sobre Tenoli en esta página](http://tenoli.gobiernoelectronico.gob.sv/).
   
 **Requisitos:** 
 * Ubuntu Xenial LTS / Debian 8 o superior. 
