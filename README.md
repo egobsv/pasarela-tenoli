@@ -69,14 +69,13 @@ Para iniciar este registro ingrese a la sección de 'Llaves y certificados' y ge
 seleccione 'autorizar', en el campo sujeto ingrese un valor en el siguiente formato:
  C=SV,O=Gobierno de El Salvador,OU=[institución],CN=tenoli.[institución].gob.sv,serialNumber=SV/tenoli.[institucion].gob.sv/GOB  
 
---- Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=tenoli.[institución].gob.sv,serialNumber=SV/tenoli.[institución].gob.sv/GOB
-
+ *Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=tenoli.[institución].gob.sv,serialNumber=SV/tenoli.[institución].gob.sv/GOB*
 
 * Certificado de Firma - Este certificado será utilizado por su pasarela para firmar mensajes. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar Petición de Certificado', y en el recuadro a continuación:
 seleccione 'Firma', en el campo sujeto ingrese un valor en el siguiente formato: 
 C=SV,O=Gobierno de El Salvador,OU=[institución],CN=[código presupuesto],serialNumber=SV/tenoli.[institución].gob.sv/GOB  
   
---- Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=4100,serialNumber=SV/tenoli.minec.gob.sv/GOB
+*Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=4100,serialNumber=SV/tenoli.minec.gob.sv/GOB*
 
 El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas a SETEPLAN al correo dquijada @ presidencia.gob.sv. Una vez  
 procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
@@ -91,7 +90,7 @@ Una vez la administración central de Tenoli autorice el registro, el estado cam
   
 Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este boqueando alguna conexión.  
   
-Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](servicios.md) para consumir o compartir datos con otras instituciones.
+Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](http://tenoli.gobiernoelectronico.gob.sv/servicios-rest.html) para consumir o compartir datos con otras instituciones.
 
 ## Licencia
 
