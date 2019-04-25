@@ -47,7 +47,7 @@ El ancla de  configuración inicial contiene los parámetros de inicio definidos
   
 Descargue, guarde este archivo en su máquina y luego regrese a la página de configuración de su pasarela para que pueda importar el ancla de configuración inicial.
 
-* Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para MINED el código es 4100.
+* Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Economía el código es 4100.
 
 * Ingrese nombre de dominio público que se asigno durante la instalación Ej. [mipasarela].[institucion].gob.sv
 
