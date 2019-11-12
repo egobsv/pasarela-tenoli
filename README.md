@@ -28,7 +28,7 @@ El equipo puede ser una maquina virtual o un servidor físico dedicado.
 ```sh
 ~# mkdir /opt/tenoli/debs;
 ~# cd /opt/tenoli/debs;
-~# wget -r -nH -np --cut-dirs=1 http://tenoli.gobiernoelectronico.gob.sv/debs/;
+~# wget -r -nH -np --cut-dirs=1 http://tenoli.gobiernoelectronico.gob.sv/paquetes/deb/;
 ```
 3. Modifique los valores del archivo ss-respuestas.txt y ejecute el script de instalación:
 ```sh
