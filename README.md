@@ -30,7 +30,7 @@ El equipo puede ser una maquina virtual o un servidor físico dedicado.
 ~# cd /opt/tenoli/debs;
 ~# wget -r -nH -np --cut-dirs=1 http://tenoli.gobiernoelectronico.gob.sv/paquetes/deb/;
 ```
-3. Modifique los valores del archivo ss-respuestas.txt y ejecute el script de instalación:
+3. Modifique las direcciones IP y define el usuario y contraseña de administrador de la pasarela dentro del archivo ss-respuestas.txt. La instalación creara el usaurio automaticamente, una vez realizados los cambios ejecute el script de instalación:
 ```sh
 ~# cd /opt/tenoli/;
 ~# nano ss-respuestas.txt;
@@ -39,7 +39,7 @@ El equipo puede ser una maquina virtual o un servidor físico dedicado.
 
 **2. Inicializar Pasarela**
 
-Conéctese a la pasarela desde el navegador https://[mipasarela].[institucion].gob.sv:4000/
+Conéctese a la pasarela desde el navegador https://[DIRECCION IP]:4000/
 
 Use las credenciales que creó en el paso anterior, el sistema ingresa y pide el ancla de configuración inicial.
 
@@ -49,7 +49,7 @@ Descargue, guarde este archivo en su máquina y luego regrese a la página de co
 
 * Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Economía el código es 4100.
 
-* Ingrese nombre de dominio público que se asigno durante la instalación Ej. [mipasarela].[institucion].gob.sv
+* Ingresar el identificador de su pasarela, ejemplo: NITSV4100-001. Este valor sera parte del certificado electrónico que identificara a su pasarela. 
 
 * Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
 
@@ -65,17 +65,13 @@ Para terminar, es necesario registrar nuestra pasarela para que pueda unirse a l
 Este registro se hace a través de certificados de Firma Electrónica Simple  y es aprobado desde la Autoridad Certificadora de SETEPLAN.  
 Para iniciar este registro ingrese a la sección de 'Llaves y certificados' y genere las solicitudes de registro siguientes usando los datos de su institución.
 
-* Certificado de Autorización - Este certificado será utilizado por las instituciones miembro de la red Tenoli para identificar a su pasarela. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar Petición de Certificado', y en el recuadro a continuación:
-seleccione 'autorizar', en el campo sujeto ingrese un valor en el siguiente formato:
- C=SV,O=Gobierno de El Salvador,OU=[institución],CN=tenoli.[institución].gob.sv,serialNumber=SV/tenoli.[institucion].gob.sv/GOB  
+* Certificado de Autorización - Este certificado será utilizado por las instituciones miembro de la red Tenoli para identificar a su pasarela. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar CSR', y en el recuadro a continuación:
+		Seleccione la autoridad "certifiacdora raíz" y Formato CSR "PEM" antes de presionar el botón OK para avanzar  		      la siguiente paso.
+		En el segundo recuadro, ingrese el nombre de su institución y el nombre de dominio que usara su pasarela, 		  ej: tenoli.minec.gob.sv 
 
- *Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=tenoli.[institución].gob.sv,serialNumber=SV/tenoli.[institución].gob.sv/GOB*
+* Certificado de Firma - Este certificado será utilizado por su pasarela para firmar mensajes. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar CSR', y en el recuadro a continuación:
+		Seleccione la autoridad "certifiacdora raíz" y Formato CSR "PEM" antes de presionar el botón OK para avanzar  		      la siguiente paso. En el segundo recuadro, ingrese el nombre de su institución.
 
-* Certificado de Firma - Este certificado será utilizado por su pasarela para firmar mensajes. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar Petición de Certificado', y en el recuadro a continuación:
-seleccione 'Firma', en el campo sujeto ingrese un valor en el siguiente formato: 
-C=SV,O=Gobierno de El Salvador,OU=[institución],CN=[código presupuesto],serialNumber=SV/tenoli.[institución].gob.sv/GOB  
-  
-*Ejemplo: C=SV,O=Gobierno de El Salvador,OU=MINEC,CN=4100,serialNumber=SV/tenoli.minec.gob.sv/GOB*
 
 El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas a SETEPLAN al correo dquijada @ presidencia.gob.sv. Una vez  
 procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
