@@ -49,7 +49,7 @@ Descargue, guarde este archivo en su máquina y luego regrese a la página de co
 
 * Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Economía el código es 4100.
 
-* Ingresar el identificador de su pasarela, ejemplo: NITSV4100-001. Este valor sera parte del certificado electrónico que identificara a su pasarela. 
+* Ingresar el identificador de su pasarela, este valor sera parte del certificado electrónico que identificará a su pasarela. Se recomienda usar el [formato ETSI para la identificación de entidades] (https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf) que incluye [XX-código país][fuente del código][código]-[correlativo de pasarela insitucional] ejemplo: MIHSV4100-001. 
 
 * Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
 
@@ -73,12 +73,11 @@ Para iniciar este registro ingrese a la sección de 'Llaves y certificados' y ge
 		Seleccione la autoridad "certifiacdora raíz" y Formato CSR "PEM" antes de presionar el botón OK para avanzar  		      la siguiente paso. En el segundo recuadro, ingrese el nombre de su institución.
 
 
-El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas a SETEPLAN al correo dquijada @ presidencia.gob.sv. Una vez  
-procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
+El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas a l correo dquijada @ presidencia.gob.sv. Una vez procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
 
 **4. Finalizar Registro**
 
-Usando los certificados que recibió de SETEPLAN, ingrese a su pasarela, seleccione la opcion 'Llaves y certificados', presione el botón 'importar certificado' y luego importe sus certificados de Autorización y Firma.  
+Usando los certificados que recibió, ingrese a su pasarela, seleccione la opcion 'Llaves y certificados', presione el botón 'importar certificado' y luego importe sus certificados de Autorización y Firma.  
   
 Con el certificado de Identidad, una vez importado, deberá realizarse el registro de su pasarela. Seleccione el certificado Identidad, y presione el botón 'Activar' y luego 'Registrar'. El estado del certificado cambia a 'registro en progreso'. 
 
