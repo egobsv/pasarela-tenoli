@@ -49,7 +49,7 @@ Descargue, guarde este archivo en su máquina y luego regrese a la página de co
 
 * Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Economía el código es 4100.
 
-* Ingresar el identificador de su pasarela, este valor sera parte del certificado electrónico que identificará a su pasarela. Se recomienda usar el [formato ETSI para la identificación de entidades](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf) que incluye [XX-código país][fuente del código][código]-[correlativo de pasarela insitucional] ejemplo: MIHSV4100-001. 
+* Ingresar el identificador de su pasarela, este valor sera parte del certificado electrónico que identificará a su pasarela. Se recomienda usar el [formato ETSI para la identificación de entidades](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf) que incluye [XX-código país][XXX-fuente del código][####-código]-[##-correlativo de pasarela insitucional] ejemplo: MIHSV4100-01. 
 
 * Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
 
