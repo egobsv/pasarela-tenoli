@@ -36,3 +36,19 @@ server {
 }
 
 ```
+Instalar PHP
+```
+apt-get install php7.2 php7.2-fpm
+```
+
+Crear contenido de la API, archivo api.php:
+ ```
+ <?php 
+$json->nombre = "Pedro Paramo";
+$json->nit = "012345012345";
+$json->dui = "0987654321";
+$data = json_encode($json); 
+echo $data; 
+?> 
+ ```
+
