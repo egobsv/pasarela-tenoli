@@ -7,3 +7,4 @@ xroad-center	xroad-common/service-altsubject	string	IP:10.0.2.15,DNS:tenoli.loca
 xroad-center	xroad-common/service-subject	string	/CN=pasarela-tenoli/O=local
 xroad-center	xroad-common/username	string	xroad
 xroad-common	xroad-common/username	string	xroad
+xroad-proxy	  xroad-common/database-host	string	127.0.0.1:5432
