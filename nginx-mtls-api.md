@@ -13,6 +13,7 @@ openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 Crear archivo de configuración de host virtual usando un puerto disponible (ej 9443):
 
 ```
+##Host Virtual /etc/nignx/sites-enabled/ejemplo-xroad
 server {
         listen 9443 ssl;
         ssl_certificate /etc/ssl/certs/api-autofirmado.crt;
@@ -28,6 +29,9 @@ server {
         ssl_session_cache    shared:SSL:10m;
         ssl_session_timeout  10m;
         keepalive_timeout    60;
+        
+        access_log /var/log/nginx/api_access.log;
+        error_log /var/log/nginx/api_error.log;
         root /var/www/html;
         index index.php;
 
