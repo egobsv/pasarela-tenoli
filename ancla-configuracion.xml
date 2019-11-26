@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns3:configurationAnchor xmlns:ns2="http://x-road.eu/xsd/identifiers" xmlns:ns3="http://x-road.eu/xsd/xroad.xsd">
-    <generatedAt>2019-02-11T21:02:36.955Z</generatedAt>
-    <instanceIdentifier>SV</instanceIdentifier>
-    <source>
-        <downloadURL>http://tenoli.gob.sv/internalconf</downloadURL>
-        <verificationCert>MIICqTCCAZGgAwIBAgIBATANBgkqhkiG9w0BAQ0FADAOMQwwCgYDVQQDDANOL0EwHhcNNzAwMTAxMDAwMDAwWhcNMzgwMTAxMDAwMDAwWjAOMQwwCgYDVQQDDANOL0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCIhMYY1aWig880FoFD0kH5RyKBZ5Z0Dbgcg2qWlQDRazdrBLMHBZ7yN/vT5WDdUHsEe8wgkL52G+J3xNUOqbUcK6DK/jFjQxC6Du+BHtaO79fAZOF4I9McHHGloQ7kzacMYCtXdx4WI3zfjYJnGEaZKswIZAJmKbQNtdk6HTGfez9G1SDnEVoJ3wI5p5RjEnF1v4jxds3Rc3iSAdsuDY9yh+sUXyV68vPslmgEPKDCusQd9tdjDG9u9Pw4lZ6qIQkympPi4qsHFtbS4Hj0absRFPCOKBBCQplqgszVBkHBatVYDTqOLi3rCdQJ2lih6uCIEe4xJ1Gl2qY8VKW/W/BVAgMBAAGjEjAQMA4GA1UdDwEB/wQEAwIGQDANBgkqhkiG9w0BAQ0FAAOCAQEAdiFthGVRo1mfCTGgOCRjWS3wXYGAE/nKWnGZqhE3girIJjmLIc+Nac9cHFMqZ2wUdEKxoiq3Z0iid1ughmsdcx4wk/S1N+9ohVTnEuHB5Qgl98owZquTLP4hahkJUc7ESeMsumM8S3BEd/U0k/7Q9Ojnys/o6YNWaa4PHPAqcKnxI3z5jU1Hvu0NFRxcSoS5QYpYw9pHnWG1K8aWLtjgbgoBWW6nP52ifpI3E0UwH/gujVJl52tRy72hMCLuwaZOvcUAyNOQVFSvi/zlCQ4OmRyfHA7GoML8RgThyqZfP/wd3kxOsdH/lYyJbXthA4AqP2RHoHIs2YgP9QQSMhCplg==</verificationCert>
-    </source>
-</ns3:configurationAnchor>
