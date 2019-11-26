@@ -1,5 +1,4 @@
 
-A	B		C
 SI1 -----> SS1 ---- INTERNET/RED PÚBLICA --- SS2--->SI2
 
 SI1: Sistema de información que consume datos  
