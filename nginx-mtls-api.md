@@ -1,4 +1,4 @@
-Crear certficado:
+Crear certificado:
 
 ```
 openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/api-autofirmado.key -out /etc/ssl/certs/api-autofirmado.crt -subj "/C=SV/O=Gobierno de El Salvador/O=Presidencia/OU=CERTIFICADO AUTOFRIMADO/CN=API de Integración de datos"
