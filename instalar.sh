@@ -41,6 +41,3 @@ dpkg -i xroad-securityserver_6.22.0-1.22.0.ubuntu18.04_all.deb xroad-autologin_6
 touch /etc/xroad/autologin;
 chown xroad:xroad /etc/xroad/autologin;
 echo "CAMBIAME" >> /etc/xroad/autologin;
-
-##ADD HOSTS
-echo "190.5.135.94 tenoli.gob.sv" >> /etc/hosts;
