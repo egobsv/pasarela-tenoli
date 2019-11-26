@@ -14,46 +14,33 @@ cd /opt/tenoli;
 debconf-set-selections ss-respuestas.txt;
 
 cd /opt/tenoli/debs; 
-dpkg -i xroad-common_6.7.13-1._amd64.deb xroad-jetty9_6.7.13-1._all.deb;
-dpkg -i xroad-proxy_6.7.13-1._all.deb;
-dpkg -i xroad-addon-proxymonitor_6.7.13-1._all.deb xroad-monitor_6.7.13-1._all.deb xroad-addon-messagelog_6.7.13-1._all.deb xroad-addon-metaservices_6.7.13-1._all.deb xroad-securityserver_6.7.13-1._all.deb;
+apt-get update;
+apt-get install -y  openjdk-8-jre-headless ca-certificates-java ntp unzip expect net-tools \
+                   postgresql postgresql-contrib postgresql-client crudini rlwrap \
+                   nginx-light curl debconf rlwrap rsyslog unzip libmhash2 authbind;
+cd /opt/tenoli;
+debconf-set-selections /opt/tenoli/ss-respuestas.txt;
 
-cd /opt/tenoli/scripts;
-cp jetty.conf /etc/xroad/services/;
-cp xroad-jetty.service /etc/systemd/system/;
-cp xroad-jetty9 /usr/bin/; 
-chmod +x /usr/bin/xroad-jetty9;
+dpkg -i xroad-base_6.22.0-1.22.0.ubuntu18.04_amd64.deb xroad-jetty9_6.22.0-1.22.0.ubuntu18.04_all.deb \
+	 xroad-signer_6.22.0-1.22.0.ubuntu18.04_amd64.deb xroad-nginx_6.22.0-1.22.0.ubuntu18.04_amd64.deb \
+         xroad-confclient_6.22.0-1.22.0.ubuntu18.04_amd64.deb;
+service postgresql restart;
 
-cp xroad-signer /usr/share/xroad/bin;
-chmod +x /usr/share/xroad/bin/xroad-signer;
-cp xroad-signer.service /etc/systemd/system/;
-cp xroad-confclient /usr/share/xroad/bin;
-chmod +x /usr/share/xroad/bin/xroad-confclient;
-cp xroad-confclient.service /etc/systemd/system/;
-systemctl enable xroad-jetty.service;
-systemctl start xroad-jetty.service;
+dpkg -i xroad-proxy_6.22.0-1.22.0.ubuntu18.04_all.deb xroad-monitor_6.22.0-1.22.0.ubuntu18.04_all.deb \
+        xroad-opmonitor_6.22.0-1.22.0.ubuntu18.04_all.deb \
+        xroad-addon-opmonitoring_6.22.0-1.22.0.ubuntu18.04_all.deb; 
 
-cp xroad-proxy-port-redirect.sh /usr/share/xroad/scripts/;
-cp xroad-proxy /usr/share/xroad/bin/;
-cp xroad-monitor /usr/share/xroad/bin/;
-cp xroad-opmonitor /usr/share/xroad/bin/;
-mkdir -p /usr/share/xroad/autologin/;
-cp xroad-autologin-retry.sh /usr/share/xroad/autologin/;
-chmod +x /usr/share/xroad/scripts/xroad-proxy-port-redirect.sh \
-/usr/share/xroad/bin/xroad-proxy /usr/share/xroad/bin/xroad-monitor \
-/usr/share/xroad/bin/xroad-opmonitor /usr/share/xroad/autologin/xroad-autologin-retry.sh;
-cp xroad-proxy.service /etc/systemd/system/;
-cp xroad-monitor.service /etc/systemd/system/;
+dpkg -i xroad-addon-metaservices_6.22.0-1.22.0.ubuntu18.04_all.deb \
+        xroad-addon-messagelog_6.22.0-1.22.0.ubuntu18.04_all.deb \
+        xroad-addon-proxymonitor_6.22.0-1.22.0.ubuntu18.04_all.deb \
+        xroad-addon-wsdlvalidator_6.22.0-1.22.0.ubuntu18.04_all.deb;
 
-systemctl enable xroad-proxy.service;
-systemctl enable xroad-monitor.service;
-systemctl enable xroad-signer.service;
-systemctl enable xroad-confclient.service;
+dpkg -i xroad-securityserver_6.22.0-1.22.0.ubuntu18.04_all.deb xroad-autologin_6.22.0-1.22.0.ubuntu18.04_all.deb;
 
-systemctl start xroad-confclient.service;
-systemctl start xroad-signer.service;
-systemctl start xroad-proxy.service;
-systemctl start xroad-monitor.service;
+##NUMERO PIN
+touch /etc/xroad/autologin;
+chown xroad:xroad /etc/xroad/autologin;
+echo "CAMBIAME" >> /etc/xroad/autologin;
 
 ##ADD HOSTS
 echo "190.5.135.94 tenoli.gob.sv" >> /etc/hosts;
