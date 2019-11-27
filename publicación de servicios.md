@@ -9,19 +9,20 @@ SI1 -----> SS1 ---- INTERNET/RED PÚBLICA --- SS2--->SI2
 
 Comunicación SI1 ---> SS1
 
-Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. Por lo que es necesario crear y agregar un certificado interno usando los siguientes pasos:  
+Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario crear y agregar un certificado interno usando los siguientes pasos:  
   
 ```
 openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-api.key -out consumidor-api.crt -subj "/C=SV/O=Gobierno de El Salvador/O=PRUEBAS/OU=CERTIFICADO AUTOFRIMADO/CN= Consumidor - API de Integración de datos"
 ```
 
 Asegurase de subir e archivo consumidor-api.crt a la lista de certificados TLS internos y luego pruebe el servicio usando los certificados que acaba de crear desde su sistema de información que consume datos o usando la siguiente linea de comandos:
-
+```
 curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/1001/consulta' -i 'https://localhost/r1/sv-test/GOB/1001/api-pruebas/consulta-pruebas'
 ``` 
 
-Comunicación SI2 ---> SS2
-Crear parámetros de intercambio TLS:
+Comunicación SS2 ---> SI2
+Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario agregar el certificado del servidor donde reside el sistema de información interno (SS2).  A continuación se muestra como configurar https en un servidor Nginx. 
+
 
 ```
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
