@@ -27,4 +27,6 @@ Desde la ventana de configuración del sistema, en la pestaña "Servidores Inter
   ssl_certificate /etc/ssl/certs/api-autofirmado.crt;
  ```
       
+SI2 Con MTLS
 
+Si el sistema de informacion requiere un certificado de clietne autorizado, debe instalarse un nuevo certificado interno en la pasarela SS2. Seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado. Ingrese el sujeto que desea usar en su nuevo certificado: CN=servicios.local,OU=Ministerio xxx,O=Gobierno de El Salvador,C=SV. 
