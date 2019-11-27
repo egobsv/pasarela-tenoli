@@ -31,4 +31,9 @@ Desde la ventana de configuración del sistema, en la pestaña "Servidores Inter
       
 **SI2 Con MTLS**
 
-Si el sistema de informacion requiere un certificado de clietne autorizado, debe instalarse un nuevo certificado interno en la pasarela SS2. Seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado. Ingrese el sujeto que desea usar en su nuevo certificado: CN=servicios.local,OU=Ministerio xxx,O=Gobierno de El Salvador,C=SV. 
+Si el sistema de informacion requiere un certificado de clietne autorizado, el servidor de seguridad SS2 enviará automaticamente su certificado interno. Si el certificado no esta autorizado se generara este error:
+```
+{"type":"Server.ServerProxy.SslAuthenticationFailed","message":"Server certificate is not trusted",
+```
+
+Para evitar este error  debe instalarse un nuevo certificado, que este autorizado, en la pasarela SS2. Seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado. Ingrese el sujeto que desea usar en su nuevo certificado: CN=servicios.local,OU=Ministerio xxx,O=Gobierno de El Salvador,C=SV. 
