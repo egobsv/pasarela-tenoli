@@ -2,7 +2,8 @@
 ## Identificación MTLS
 
 La identificación mútua TLS permite controlar el acceso a nuestra apliación usando certificados electrónicos.
-El objetivo es ofrecer un servicio en php usando HTTPS y que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado.
+
+El objetivo del ejercicio descrito en esta página es ofrecer un servicio en php usando HTTPS y que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado.
 
 **Crear servicio**
 
