@@ -1,12 +1,13 @@
 **Diagrama General**
 
-SI1 -----> SS1 ---- INTERNET/RED PÚBLICA --- SS2--->SI2
+SI1 -----> SS1 ---- TUNEL TLS/ RED PÚBLICA --- SS2--->SI2
 
 * SI1: Sistema de información que consume datos  
 * SS1: Pasarela de seguridad con sub-sistema de consumo "sv-test/GOB/1001/consulta"
 * SS2: Pasarela de seguridad con sub-sistema que entrega datos
 * SI2: Sistema de información que produce datos. "sv-test/GOB/1001/api-pruebas"
 
+El tunel TLS entre SS1 y SS2  utiliza los certificados frimados por la autoridad cetificadora de Presidencia. 
 
 **Comunicación SI1 ---> SS1**
 
