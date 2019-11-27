@@ -62,10 +62,24 @@ server {
         root /var/www/html;
         index index.php;
 
+        # MTLS
+        ssl_client_certificate /etc/ssl/certs/api-ac.crt;
+        ssl_verify_client on;
+
         location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/run/php/php7.2-fpm.sock;
         }
 }
 
-
+```
+~# curl -k https://localhost:9443/
+<html>
+<head><title>400 No required SSL certificate was sent</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<center>No required SSL certificate was sent</center>
+<hr><center>nginx</center>
+</body>
+</html>
+```
