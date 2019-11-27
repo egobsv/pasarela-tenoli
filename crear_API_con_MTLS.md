@@ -18,12 +18,14 @@ $json->nombre = "Pedro Paramo";
 $json->nit = "012345012345";
 $json->dui = "0987654321";
 $data = json_encode($json); 
-echo $data; 
+echo "\n".$data; 
 ?> 
  ```
 Provar el script:
-``
+```
 ~# php7.2 /var/www/html/index.php
+
+{"nombre":"Pedro Paramo","nit":"012345012345","dui":"0987654321"} 
 ```
 Configurar Host virtual con https en Nginx 
 
