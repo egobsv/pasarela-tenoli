@@ -1,18 +1,16 @@
 
 *Identificación MTLS*
 
-El objetico es ofrecer un servicio en php usando HTTPS y que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado.
+El objetivo es ofrecer un servicio en php usando HTTPS y que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado.
 
-Crear serivicio
+**Crear servicio**
 
-
-Instalar PHP
+El servicio de ejemplo utiliza un script PHP para regresar un objeto JSON.
 ```
-apt-get install php7.2 php7.2-fpm
-```
+~# apt-get install php7.2 php7.2-fpm
 
-Crear contenido de la API, archivo index.php:
- ```
+~#nano /var/www/html/index.php:
+
  <?php 
 $json->nombre = "Pedro Paramo";
 $json->nit = "012345012345";
@@ -20,16 +18,17 @@ $json->dui = "0987654321";
 $data = json_encode($json); 
 echo "\n".$data; 
 ?> 
- ```
-Provar el script:
-```
+ 
 ~# php7.2 /var/www/html/index.php
 
 {"nombre":"Pedro Paramo","nit":"012345012345","dui":"0987654321"} 
 ```
-Configurar Host virtual con https en Nginx 
 
-Crear autoridad certificadora, certificado web y parámetros para HTTPS:
+**Servidor HTTPS**
+
+Para servir nuestra API vamos a crear un Host virtual en Nginx. El primer paso es crear lso certificados que utilizaremos en el servicio https.   
+
+*Crear autoridad certificadora, certificado web y parámetros para HTTPS:
 
 ```
 echo "####Autoridad Certificadora:'
@@ -80,7 +79,7 @@ server {
 }
 
 ```
-Al llamar la api sin un ertificado autorizado, el servidor responderá con un error:
+Al llamar la api sin un certificado autorizado, el servidor responderá con un error:
 ```
 ~# curl -k https://localhost:9443/
 <html>
@@ -92,7 +91,7 @@ Al llamar la api sin un ertificado autorizado, el servidor responderá con un er
 </body>
 </html>
 ```
-**Crear certiifcado de cliente autorizado**
+**Crear certificado de cliente autorizado**
 ```
 openssl genrsa -out /etc/ssl/private/cliente.key 2048;
 openssl req -new -key /etc/ssl/private/cliente.key -out /etc/ssl/certs/cliente.csr -subj "/C=SV/O=Gobierno de El Salvador/O=MIN xx/OU=CERTIFICADO AUTOFRIMADO/CN=Cliente Autorizado";
@@ -104,6 +103,8 @@ Invocar la API enviando un certificado de cliente autorizado:
 ```
 
 **Firmar petición de pasarela/servidor de seguridad**
+La pasarela de seguridad de TEONLI necesita obtener un certificado autorizado; para esto desde la pasarela se debe generar la solicitud de certificado (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado). El siguiente comando firma la solicitud 'pasarela.p10' y genera el archivo 'pasarela-autorizada.crt' que debe ser instalado en la pasarela (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, Importar).  
+
 ```
-openssl x509 -req -days 365 -in /var/tmp/pasarela.csr -CA /etc/ssl/certs/api-ac.crt -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /var/tmp/pasarela-autorizada.crt;
+openssl x509 -req -days 365 -in /var/tmp/pasarela.p10 -CA /etc/ssl/certs/api-ac.crt -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /var/tmp/pasarela-autorizada.crt;
 ```
