@@ -1,6 +1,7 @@
 
 ## Identificación MTLS
 
+La identificación mútua TLS permite controlar el acceso a nuestra apliación usando certificados electrónicos.
 El objetivo es ofrecer un servicio en php usando HTTPS y que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado.
 
 **Crear servicio**
@@ -103,6 +104,7 @@ Invocar la API enviando un certificado de cliente autorizado:
 ```
 
 **Firmar petición de pasarela/servidor de seguridad**
+
 La pasarela de seguridad de TEONLI necesita obtener un certificado autorizado; para esto desde la pasarela se debe generar la solicitud de certificado (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado). El siguiente comando firma la solicitud 'pasarela.p10' y genera el archivo 'pasarela-autorizada.crt' que debe ser instalado en la pasarela (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, Importar).  
 
 ```
