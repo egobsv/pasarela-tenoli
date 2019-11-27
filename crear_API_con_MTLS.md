@@ -74,12 +74,9 @@ server {
 
 ```
 ~# curl -k https://localhost:9443/
-<html>
-<head><title>400 No required SSL certificate was sent</title></head>
-<body bgcolor="white">
-<center><h1>400 Bad Request</h1></center>
-<center>No required SSL certificate was sent</center>
-<hr><center>nginx</center>
-</body>
-</html>
+
+400 No required SSL certificate was sent
+400 Bad Request
+No required SSL certificate was sent
+nginx
 ```
