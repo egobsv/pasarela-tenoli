@@ -64,7 +64,7 @@ Descargue, guarde este archivo en su máquina y luego regrese a la página de co
 **3. Registrar Pasarela**
 
 Para terminar, es necesario registrar nuestra pasarela para que pueda unirse a la red Tenoli.  
-Este registro se hace a través de certificados de Firma Electrónica Simple  y es aprobado desde la Autoridad Certificadora de SETEPLAN.  
+Este registro se hace a través de certificados de Firma Electrónica Simple  y es aprobado desde la Autoridad Certificadora de Presidencia.  
 Para iniciar este registro ingrese a la sección de 'Llaves y certificados' y genere las solicitudes de registro siguientes usando los datos de su institución.
 
 * Certificado de Autorización - Este certificado será utilizado por las instituciones miembro de la red Tenoli para identificar a su pasarela. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar CSR', y en el recuadro a continuación:
@@ -87,7 +87,7 @@ Una vez la administración central de Tenoli autorice el registro, el estado cam
   
 Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este boqueando alguna conexión.  
   
-Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](http://tenoli.gobiernoelectronico.gob.sv/servicios-rest.html) para consumir o compartir datos con otras instituciones.
+Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](https://github.com/egobsv/pasarela-tenoli/blob/master/publicar_servicio.md) para consumir o compartir datos con otras instituciones.
 
 ## Licencia
 
