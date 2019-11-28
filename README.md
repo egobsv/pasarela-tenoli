@@ -24,7 +24,6 @@ Si necesita hacer una instalación en alta disponibilidad puede leer la [documen
 ~# cd /opt/
 ~# wget https://github.com/egobsv/pasarela-tenoli/archive/master.zip
 ~# unzip master.zip;mv pasarela-tenoli-master tenoli;
-~# cd /opt/tenoli; chmod +x instalar.sh
 ```
 2. Descarque los paquetes DEB y guardelos en su servidor usando los siguientes comandos:
 ```sh
@@ -36,6 +35,7 @@ Si necesita hacer una instalación en alta disponibilidad puede leer la [documen
 ```sh
 ~# cd /opt/tenoli/;
 ~# nano ss-respuestas.txt;
+~# chmod +x instalar.sh
 ~# ./instalar.sh
 ```
 
