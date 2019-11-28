@@ -15,6 +15,8 @@ Ingreso: 80,443
 
 El equipo puede ser una maquina virtual o un servidor físico dedicado.  
 
+Si necesita hacer una instalación en alta disponibilidad puede leer la [documentación oficial](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/LoadBalancing/ig-xlb_x-road_external_load_balancer_installation_guide.md).
+
 **1. Instalar**
 
 1. Antes de iniciar debe obtener los archivos de instalacioón, puede hacerlo con los siguientes comandos:
