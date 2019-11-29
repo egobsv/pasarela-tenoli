@@ -28,7 +28,7 @@ Si necesita hacer una instalación en alta disponibilidad puede leer la [documen
 2. Descarque los paquetes DEB y guardelos en su servidor usando los siguientes comandos:
 ```sh
 ~# mkdir /opt/tenoli/debs;
-~# cd /opt/tenoli/debs;
+~# cd /opt/tenoli/;
 ~# wget -r -nH -np --cut-dirs=1 http://tenoli.gobiernoelectronico.gob.sv/paquetes/deb/;
 ```
 3. Modifique las direcciones IP y define el usuario y contraseña de administrador de la pasarela dentro del archivo ss-respuestas.txt. La instalación creara el usaurio automaticamente, una vez realizados los cambios ejecute el script de instalación:
