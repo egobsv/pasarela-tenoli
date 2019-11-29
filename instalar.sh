@@ -13,7 +13,7 @@ cd /opt/tenoli;
 #MODIFIQUE EL ARCHIVO ANTES DE EJECUTAR ESTE COMANDO!!!
 debconf-set-selections ss-respuestas.txt;
 
-cd /opt/tenoli/debs; 
+cd /opt/tenoli/deb; 
 apt-get update;
 apt-get install -y  openjdk-8-jre-headless ca-certificates-java ntp unzip expect net-tools \
                    postgresql postgresql-contrib postgresql-client crudini rlwrap \
