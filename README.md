@@ -57,7 +57,7 @@ Descargue, guarde este archivo en su máquina y luego regrese a la página de co
 
 * Presionar 'Continuar', para guardar los cambios y entrar por primera vez.  
   
-* Una vez dentro, desde el Menú Principal, seleccionar 'Parámetros del Sistema', agregue el servicio de sellado de tiempo.
+* Una vez dentro, desde el Menú Principal, seleccionar 'Parámetros del Sistema' en la sección 'Servicios de Sellado de Tiempo', presione el botón 'agregar' para usar el servicio de sellado de tiempo.
 
 * En la parte superior de la pantalla tendrá una aviso que le indica que necesita ingresar su número PIN, presiónelo e ingrese el código que ingreso en la pantalla inicial. Edite el archivo '/etc/xroad/autologin' en su servidor con su nuevo PIN para que evitar ingresarlo manulamente.
   
