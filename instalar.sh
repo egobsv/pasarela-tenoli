@@ -11,31 +11,29 @@ apt-get install -y nginx-light postgresql postgresql-contrib postgresql-client l
 cd /opt/tenoli;
 
 #MODIFIQUE EL ARCHIVO ANTES DE EJECUTAR ESTE COMANDO!!!
-debconf-set-selections ss-respuestas.txt;
+debconf-set-selections /opt/tenoli/ss-respuestas.txt;
 
 cd /opt/tenoli/deb; 
 apt-get update;
 apt-get install -y  openjdk-8-jre-headless ca-certificates-java ntp unzip expect net-tools \
                    postgresql postgresql-contrib postgresql-client crudini rlwrap \
                    nginx-light curl debconf rlwrap rsyslog unzip libmhash2 authbind;
-cd /opt/tenoli;
-debconf-set-selections /opt/tenoli/ss-respuestas.txt;
 
-dpkg -i xroad-base_6.22.0-1.22.0.ubuntu18.04_amd64.deb xroad-jetty9_6.22.0-1.22.0.ubuntu18.04_all.deb \
-	 xroad-signer_6.22.0-1.22.0.ubuntu18.04_amd64.deb xroad-nginx_6.22.0-1.22.0.ubuntu18.04_amd64.deb \
-         xroad-confclient_6.22.0-1.22.0.ubuntu18.04_amd64.deb;
+dpkg -i xroad-base_6.22.0-1.local.ubuntu18.04_amd64.deb xroad-jetty9_6.22.0-1.local.ubuntu18.04_all.deb \
+	 xroad-signer_6.22.0-1.local.ubuntu18.04_amd64.deb xroad-nginx_6.22.0-1.local.ubuntu18.04_amd64.deb \
+         xroad-confclient_6.22.0-1.local.ubuntu18.04_amd64.deb;
 service postgresql restart;
 
-dpkg -i xroad-proxy_6.22.0-1.22.0.ubuntu18.04_all.deb xroad-monitor_6.22.0-1.22.0.ubuntu18.04_all.deb \
-        xroad-opmonitor_6.22.0-1.22.0.ubuntu18.04_all.deb \
-        xroad-addon-opmonitoring_6.22.0-1.22.0.ubuntu18.04_all.deb; 
+dpkg -i xroad-proxy_6.22.0-1.local.ubuntu18.04_all.deb xroad-monitor_6.22.0-1.local.ubuntu18.04_all.deb \
+        xroad-opmonitor_6.22.0-1.local.ubuntu18.04_all.deb \
+        xroad-addon-opmonitoring_6.22.0-1.local.ubuntu18.04_all.deb; 
 
-dpkg -i xroad-addon-metaservices_6.22.0-1.22.0.ubuntu18.04_all.deb \
-        xroad-addon-messagelog_6.22.0-1.22.0.ubuntu18.04_all.deb \
-        xroad-addon-proxymonitor_6.22.0-1.22.0.ubuntu18.04_all.deb \
-        xroad-addon-wsdlvalidator_6.22.0-1.22.0.ubuntu18.04_all.deb;
+dpkg -i xroad-addon-metaservices_6.22.0-1.local.ubuntu18.04_all.deb \
+        xroad-addon-messagelog_6.22.0-1.local.ubuntu18.04_all.deb \
+        xroad-addon-proxymonitor_6.22.0-1.local.ubuntu18.04_all.deb \
+        xroad-addon-wsdlvalidator_6.22.0-1.local.ubuntu18.04_all.deb;
 
-dpkg -i xroad-securityserver_6.22.0-1.22.0.ubuntu18.04_all.deb xroad-autologin_6.22.0-1.22.0.ubuntu18.04_all.deb;
+dpkg -i xroad-securityserver_6.22.0-1.local.ubuntu18.04_all.deb xroad-autologin_6.22.0-1.local.ubuntu18.04_all.deb;
 
 ##NUMERO PIN
 touch /etc/xroad/autologin;
