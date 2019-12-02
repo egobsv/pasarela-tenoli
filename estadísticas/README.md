@@ -9,7 +9,9 @@ La plataforma genera información estadística de uso de la pasarela sobre:
 Para consultar estas estadísticas, se debe utilizar el mecanismo HTTP definido en el servicio/sub-sistema, es decir HTTPS con autenticación (valor por defecto). El servicio únicamente está disponible usando mensajes SOAP, a continuación se muestra un ejemplo de econsulta.
 
 ```
-~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key  -d @/var/tmp/ejemplo-consulta-estadisticas.xml --header "Content-Type: text/xml" -X POST http://localhost --output /var/tmp/respuesta.multipart
+~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key \
+        -d @/var/tmp/ejemplo-consulta-estadisticas.xml --header "Content-Type: text/xml" \
+         -X POST http://localhost --output /var/tmp/respuesta.multipart
 ```
 La respuesta de la consulta es un mensaje SOAP con adjuntos binarios; el script consulta.py realiza la consulta sobre estadisitcas de los últimos 30 días, procesa la respuesta y guarda los registros json en un archivo. Las variables del script se pueden ajsutar para diferentes servicios y rangos del reporte. 
 
@@ -35,13 +37,11 @@ La respuesta de la consulta es un mensaje SOAP con adjuntos binarios; el script 
  [...]   
 ```
 
-Al usar certificados autofirmados aparece este mensaje de pr
-ecaución:
+Al usar certificados autofirmados dentro del script de python, el sistema muestra este mensaje de precaución:
 ```
 /usr/lib/python3/dist-packages/urllib3/connectionpool.py:860: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
 ```
-Para eliminarlo se exporatando la siguiente variable
-
+Una forma de eliminar este mensaje es exporatando la siguiente variable
 ```
 ~# export PYTHONWARNINGS="ignore:Unverified HTTPS request"
 ```
