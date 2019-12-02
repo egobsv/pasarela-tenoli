@@ -1,8 +1,8 @@
 ## Estadísticas de Uso
 
 La plataforma genera información estadística de uso de la pasarela sobre:
- * Mensajes procesados por cada sub-sistema/servicio administrado por la pasarela
- * Variables del sistema operativo (memoria, disco duro, etc) 
+ * Historico de mensajes procesados por cada sub-sistema/servicio administrado por la pasarela
+ * Desempeño del sistema (tiempos de respuesta, tamaño de los mensajes, etc) 
  
  La descripción de las variables, posibles parametros de consulta y estructura de los mensajes de respuesta estan definidos en [esta página](https://github.com/nordic-institute/X-Road/blob/6.22.0/doc/OperationalMonitoring/Protocols/pr-opmon_x-road_operational_monitoring_protocol_Y-1096-2.md)
 
@@ -10,7 +10,7 @@ Para consultar estas estadísticas, se debe utilizar el mecanismo HTTP definido 
 
 ```
 ~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key \
-        -d @/var/tmp/ejemplo-consulta-estadisticas.xml --header "Content-Type: text/xml" \
+        -d @/var/tmp/ejemplo-consulta-historico.xml --header "Content-Type: text/xml" \
          -X POST http://localhost --output /var/tmp/respuesta.multipart
 ```
 La respuesta de la consulta es un mensaje SOAP con adjuntos binarios; el script consulta.py realiza la consulta sobre estadisitcas de los últimos 30 días, procesa la respuesta y guarda los registros json en un archivo. Las variables del script se pueden ajsutar para diferentes servicios y rangos del reporte. 
