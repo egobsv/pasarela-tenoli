@@ -17,6 +17,7 @@ La respuesta de la consulta es un mensaje SOAP con adjuntos binarios; el script 
 
 ```
  ~# python3 consulta.py
+Se guardo la respuesta en /var/tmp/estadisticas-2019-12-02.json
 
  ~# cat  estadisticas-2019-12-02.json
  [....]
