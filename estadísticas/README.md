@@ -2,11 +2,11 @@
 
 La plataforma genera información estadística de uso de la pasarela sobre:
  * Historico de mensajes procesados por cada sub-sistema/servicio administrado por la pasarela
- * Desempeño del sistema (tiempos de respuesta, tamaño de los mensajes, etc) 
+ * Desempeño de servicios publicados (tiempos de respuesta, tamaño de los mensajes, etc) 
  
  La descripción de las variables, posibles parametros de consulta y estructura de los mensajes de respuesta estan definidos en [esta página](https://github.com/nordic-institute/X-Road/blob/6.22.0/doc/OperationalMonitoring/Protocols/pr-opmon_x-road_operational_monitoring_protocol_Y-1096-2.md)
 
-Para consultar estas estadísticas, se debe utilizar el mecanismo HTTP definido en el servicio/sub-sistema, es decir HTTPS con autenticación (valor por defecto). El servicio únicamente está disponible usando mensajes SOAP, a continuación se muestra un ejemplo de econsulta.
+Para consultar el historico de mensajes de un subsistema, se debe utilizar el mecanismo HTTP definido en el servicio/sub-sistema, es decir HTTPS con autenticación (valor por defecto). El servicio únicamente está disponible usando mensajes SOAP, a continuación se muestra un ejemplo de econsulta.
 
 ```
 ~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key \
@@ -45,3 +45,12 @@ Una forma de eliminar este mensaje es exporatando la siguiente variable
 ```
 ~# export PYTHONWARNINGS="ignore:Unverified HTTPS request"
 ```
+
+Para consultar el estadístico de desempeño de un sub-sistema puede editarse y usarse la consulta SOAP de ejemplo usnado el siguiente comando:
+```
+ curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key \
+        -d @/var/tmp/ejemplo-consulta-desempeno.xml --header "Content-Type: text/xml" \
+         -X POST http://localhost --output /var/tmp/respuesta.xml
+```
+La respuesta es un mensaje SOAP con las estadísticas de desempeño de la APIs que estan publicadas a través del sub-sistema.
+
