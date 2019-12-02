@@ -1,13 +1,40 @@
 ## Estadísticas de Uso
 
-La plataforma genera información estadística de uso de la pasarela sobre las variables del sistema operativo (memoria, disco duro, etc) y sobre los mensajes procesados. La descripción de las variables, posibles parametros de consulta y estructura de los mensajes de respuesta estan definidos en [esta página](https://github.com/nordic-institute/X-Road/blob/6.22.0/doc/OperationalMonitoring/Protocols/pr-opmon_x-road_operational_monitoring_protocol_Y-1096-2.md)
+La plataforma genera información estadística de uso de la pasarela sobre:
+ * Mensajes procesados por cada sub-sistema/servicio administrado por la pasarela
+ * Variables del sistema operativo (memoria, disco duro, etc) 
+ 
+ La descripción de las variables, posibles parametros de consulta y estructura de los mensajes de respuesta estan definidos en [esta página](https://github.com/nordic-institute/X-Road/blob/6.22.0/doc/OperationalMonitoring/Protocols/pr-opmon_x-road_operational_monitoring_protocol_Y-1096-2.md)
 
-Para consultar estas estadísticas, es necesario crear un servicio(sub sistema) que actuará como compuerta de autorización para ver las estadisitcas de nuestra pasarela.  
+Para consultar estas estadísticas, se debe utilizar el mecanismo HTTP definido en el servicio/sub-sistema, es decir HTTPS con autenticación (valor por defecto). El servicio únicamente está disponible usando mensajes SOAP, a continuación se muestra un ejemplo de econsulta.
 
-El servicio unicamente esta disponible usando mensajes SOAP.
 ```
 ~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key  -d @/var/tmp/ejemplo-consulta-estadisticas.xml --header "Content-Type: text/xml" -X POST http://localhost --output /var/tmp/respuesta.multipart
 ```
+La respuesta de la consulta es un mensaje SOAP con adjuntos binarios; el script consulta.py realiza la consulta sobre estadisitcas de los últimos 30 días, procesa la respuesta y guarda los registros json en un archivo. Las variables del script se pueden ajsutar para diferentes servicios y rangos del reporte. 
+
+```
+ ~# python3 consulta.py
+
+ ~# cat  estadisticas-2019-12-02.json
+ [....]
+       "messageId": "sv-test-5b319806-e1d5-4769-9a7c-e9ca03c9bf0c",
+        "messageProtocolVersion": "1",
+        "monitoringDataTs": 1574722196,
+        "requestAttachmentCount": 0,
+        "requestInTs": 1574722194483,
+        "requestOutTs": 1574722194665,
+        "requestRestSize": 221,
+        "responseAttachmentCount": 0,
+        "responseInTs": 1574722195965,
+        "responseOutTs": 1574722196112,
+        "responseRestSize": 627,
+        "securityServerType": "Client",
+        "serviceCode": "consulta-pruebas",
+    }
+ [...]   
+```
+
 Al usar certificados autofirmados aparece este mensaje de pr
 ecaución:
 ```
