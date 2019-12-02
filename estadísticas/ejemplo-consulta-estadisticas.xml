@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope
+        xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xroad="http://x-road.eu/xsd/xroad.xsd"
+        xmlns:om="http://x-road.eu/xsd/op-monitoring.xsd"
+        xmlns:id="http://x-road.eu/xsd/identifiers">
+    <SOAP-ENV:Header>
+        <xroad:client id:objectType="SUBSYSTEM">
+            <id:xRoadInstance>sv-test</id:xRoadInstance>
+            <id:memberClass>GOB</id:memberClass>
+            <id:memberCode>1001</id:memberCode>
+            <id:subsystemCode>consulta</id:subsystemCode>
+        </xroad:client>
+        <xroad:service id:objectType="SERVICE">
+            <id:xRoadInstance>sv-test</id:xRoadInstance>
+            <id:memberClass>GOB</id:memberClass>
+            <id:memberCode>1001</id:memberCode>
+            <id:serviceCode>getSecurityServerOperationalData</id:serviceCode>
+        </xroad:service>
+        <xroad:securityServer id:objectType="SERVER">
+            <id:xRoadInstance>sv-test</id:xRoadInstance>
+            <id:memberClass>GOB</id:memberClass>
+            <id:memberCode>1001</id:memberCode>
+            <id:serverCode>MIHSV1001-02</id:serverCode>
+        </xroad:securityServer>
+        <xroad:id>FvuzbjwPmaOXEpyKng3QTlHKPEVVXkny</xroad:id>
+        <xroad:protocolVersion>4.0</xroad:protocolVersion>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <om:getSecurityServerOperationalData>
+            <om:searchCriteria>
+                <om:recordsFrom>1572649645</om:recordsFrom>
+                <om:recordsTo>1575241645</om:recordsTo>
+            </om:searchCriteria>
+        </om:getSecurityServerOperationalData>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

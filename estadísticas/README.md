@@ -6,5 +6,15 @@ Para consultar estas estadísticas, es necesario crear un servicio(sub sistema) 
 
 El servicio unicamente esta disponible usando mensajes SOAP.
 ```
-~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key  -d @/var/tmp/consulta-estadisiticas.xml --header "Content-Type: text/xml" -X POST http://localhost --output /var/tmp/respuesta.multipart
+~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key  -d @/var/tmp/ejemplo-consulta-estadisticas.xml --header "Content-Type: text/xml" -X POST http://localhost --output /var/tmp/respuesta.multipart
+```
+Al usar certificados autofirmados aparece este mensaje de pr
+ecaución:
+```
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:860: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+```
+Para eliminarlo se exporatando la siguiente variable
+
+```
+~# export PYTHONWARNINGS="ignore:Unverified HTTPS request"
 ```

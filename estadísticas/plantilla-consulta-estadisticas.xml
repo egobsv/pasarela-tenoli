@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope
+        xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xroad="http://x-road.eu/xsd/xroad.xsd"
+        xmlns:om="http://x-road.eu/xsd/op-monitoring.xsd"
+        xmlns:id="http://x-road.eu/xsd/identifiers">
+    <SOAP-ENV:Header>
+        <xroad:client id:objectType="SUBSYSTEM">
+            <id:xRoadInstance>sv-test</id:xRoadInstance>
+            <id:memberClass>GOB</id:memberClass>
+            <id:memberCode>{client_code}</id:memberCode>
+            <id:subsystemCode>{client_system}</id:subsystemCode>
+        </xroad:client>
+        <xroad:service id:objectType="SERVICE">
+            <id:xRoadInstance>sv-test</id:xRoadInstance>
+            <id:memberClass>GOB</id:memberClass>
+            <id:memberCode>{client_code}</id:memberCode>
+            <id:serviceCode>getSecurityServerOperationalData</id:serviceCode>
+        </xroad:service>
+        <xroad:securityServer id:objectType="SERVER">
+            <id:xRoadInstance>sv-test</id:xRoadInstance>
+            <id:memberClass>GOB</id:memberClass>
+            <id:memberCode>{client_code}</id:memberCode>
+            <id:serverCode>{client_server_code}</id:serverCode>
+        </xroad:securityServer>
+        <xroad:id>{message_id_placeholder}</xroad:id>
+        <xroad:protocolVersion>4.0</xroad:protocolVersion>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <om:getSecurityServerOperationalData>
+            <om:searchCriteria>
+                <om:recordsFrom>{tiempo_inicio}</om:recordsFrom>
+                <om:recordsTo>{tiempo_fin}</om:recordsTo>
+            </om:searchCriteria>
+        </om:getSecurityServerOperationalData>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
