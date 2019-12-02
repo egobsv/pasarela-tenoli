@@ -6,5 +6,5 @@ Para consultar estas estadísticas, es necesario crear un servicio(sub sistema) 
 
 El servicio unicamente esta disponible usando mensajes SOAP.
 ```
-~# curl -d @/var/tmp/consulta-estadisiticas.xml --header "Content-Type: text/xml" -X POST http://localhost --output /var/tmp/respuesta.multipart
+~# curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key  -d @/var/tmp/consulta-estadisiticas.xml --header "Content-Type: text/xml" -X POST http://localhost --output /var/tmp/respuesta.multipart
 ```
