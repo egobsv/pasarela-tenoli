@@ -4,8 +4,6 @@ timedatectl set-timezone America/El_Salvador;
 hostnamectl set-hostname ssx.tenoli.gob.sv
 echo "LC_ALL=en_US.UTF-8">> /etc/environment;
 
-mkdir /opt/tenoli;
-mkdir /etc/xroad;
 chown -R xroad:xroad /etc/xroad;
 yum install -y yum-utils;
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm;
