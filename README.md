@@ -25,7 +25,7 @@ Si necesita hacer una instalación en alta disponibilidad puede leer la [documen
 ~# wget https://github.com/egobsv/pasarela-tenoli/archive/master.zip
 ~# unzip master.zip;mv pasarela-tenoli-master tenoli;
 ```
-2. Descarque los paquetes DEB y guardelos en su servidor usando los siguientes comandos:
+2. Descarque los paquetes DEB (o RPM)y guardelos en su servidor usando los siguientes comandos:
 ```sh
 ~# mkdir /opt/tenoli;
 ~# cd /opt/tenoli/;
