@@ -1,8 +1,10 @@
 #Servidor de Seguridad basado en Centos 7
 #
 timedatectl set-timezone America/El_Salvador;
-hostnamectl set-hostname ssx.tenoli.gob.sv
 echo "LC_ALL=en_US.UTF-8">> /etc/environment;
+
+#Nombre del Equipo
+hostnamectl set-hostname ssx.tenoli.gob.sv
 
 chown -R xroad:xroad /etc/xroad;
 yum install -y yum-utils;
