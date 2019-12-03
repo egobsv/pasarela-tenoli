@@ -27,7 +27,7 @@ Si necesita hacer una instalación en alta disponibilidad puede leer la [documen
 ```
 2. Descarque los paquetes DEB y guardelos en su servidor usando los siguientes comandos:
 ```sh
-~# mkdir /opt/tenoli/debs;
+~# mkdir /opt/tenoli;
 ~# cd /opt/tenoli/;
 ~# wget -r -nH -np --cut-dirs=1 http://tenoli.gobiernoelectronico.gob.sv/paquetes/deb/;
 ```
