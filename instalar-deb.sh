@@ -6,18 +6,14 @@ useradd -m xroad;
 echo 'xroad:xroad' | chpasswd;
 
 apt-get update;
-apt-get install -y openjdk-8-jre-headless ca-certificates-java crudini rlwrap ntp unzip expect authbind;
-apt-get install -y nginx-light postgresql postgresql-contrib postgresql-client libmhash2;
+apt-get install -y  openjdk-8-jre-headless ca-certificates-java ntp unzip expect net-tools \
+                   postgresql postgresql-contrib postgresql-client crudini rlwrap \
+                   nginx-light curl debconf rlwrap rsyslog unzip libmhash2 authbind;
 cd /opt/tenoli;
 
 #MODIFIQUE EL ARCHIVO ANTES DE EJECUTAR ESTE COMANDO!!!
 debconf-set-selections /opt/tenoli/ss-respuestas.txt;
-
 cd /opt/tenoli/deb; 
-apt-get update;
-apt-get install -y  openjdk-8-jre-headless ca-certificates-java ntp unzip expect net-tools \
-                   postgresql postgresql-contrib postgresql-client crudini rlwrap \
-                   nginx-light curl debconf rlwrap rsyslog unzip libmhash2 authbind;
 
 dpkg -i xroad-base_6.22.0-1.local.ubuntu18.04_amd64.deb xroad-jetty9_6.22.0-1.local.ubuntu18.04_all.deb \
 	 xroad-signer_6.22.0-1.local.ubuntu18.04_amd64.deb xroad-nginx_6.22.0-1.local.ubuntu18.04_amd64.deb \
