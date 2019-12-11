@@ -49,10 +49,9 @@ El ancla de  configuración inicial contiene los parámetros de inicio definidos
   
 Descargue, guarde este archivo en su máquina y luego regrese a la página de configuración de su pasarela para que pueda importar el ancla de configuración inicial.
 
-* Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Economía el código es 4100.
+* Ingresar el [código presupuestario](códigos-instituciones.md) asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Hacienda es 111300400.
 
-* Ingresar el identificador de su pasarela, este valor sera parte del certificado electrónico que identificará a su pasarela. Identifique el [código de su institución](códigos-instituciones.md), asigne un número a su pasarela. 
- Por ejemplo: MIHSV111300400-01. 
+* Ingresar el identificador de su pasarela, este valor será parte del certificado electrónico que identificará a su pasarela. El identificador depende del [código de su institución](códigos-instituciones.md) Por ejemplo: MIHSV111300400-01. 
 
 * Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
 
