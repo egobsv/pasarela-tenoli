@@ -51,7 +51,7 @@ Descargue, guarde este archivo en su máquina y luego regrese a la página de co
 
 * Ingresar el código presupuestario asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Economía el código es 4100.
 
-* Ingresar el identificador de su pasarela, este valor sera parte del certificado electrónico que identificará a su pasarela. Identifique el [código de su institución](códigos-instituciones.txt), asigne un número a su pasarela. 
+* Ingresar el identificador de su pasarela, este valor sera parte del certificado electrónico que identificará a su pasarela. Identifique el [código de su institución](códigos-instituciones.md), asigne un número a su pasarela. 
  Por ejemplo: MIHSV111300400-01. 
 
 * Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
