@@ -9,8 +9,7 @@ El Identificador de su pasarela utiliza el [formato internacional ETSI](https://
 |112201501|MIHSV112201501-0X|Autoridad De Aviación Civil (AAC)|
 |112201503|MIHSV112201503-0X|Autoridad Marítima Portuaria (AMP)|
 |211101505|MIHSV211101505-0X|Administración Nacional De Acueductos Y Alcantarillados (ANDA)|
-|112100901|MIHSV112100901-0X|Academia Nacional De Seguridad
-  Pública (ANSP)|
+|112100901|MIHSV112100901-0X|Academia Nacional De Seguridad Pública (ANSP)|
 |223109500|MIHSV223109500-0X|Banco De Desarrollo De El Salvador (BANDESAL)|
 |222109000|MIHSV222109000-0X|Banco Central De Reserva De El Salvador (BCR)|
 |223109400|MIHSV223109400-0X|Banco De Fomento Agropecuario (BFA)|
