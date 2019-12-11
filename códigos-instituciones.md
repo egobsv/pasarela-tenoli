@@ -4,12 +4,13 @@
 El Identificador de su pasarela utiliza el [formato internacional ETSI](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf) para la identificación de entidades.
 
 |CÓDIGO|PASARELA|INSTITUCIÓN|
-|:-----------:|--------------|:------------|
+|:-----------:|---------------------|:------------|
 |111200200|MIHSV111200200-0X|Corte Suprema De Justicia (CSJ)|
 |112201501|MIHSV112201501-0X|Autoridad De Aviación Civil (AAC)|
 |112201503|MIHSV112201503-0X|Autoridad Marítima Portuaria (AMP)|
 |211101505|MIHSV211101505-0X|Administración Nacional De Acueductos Y Alcantarillados (ANDA)|
-|112100901|MIHSV112100901-0X|Academia Nacional De Seguridad Pública (ANSP)|
+|112100901|MIHSV112100901-0X|Academia Nacional De Seguridad
+  Pública (ANSP)|
 |223109500|MIHSV223109500-0X|Banco De Desarrollo De El Salvador (BANDESAL)|
 |222109000|MIHSV222109000-0X|Banco Central De Reserva De El Salvador (BCR)|
 |223109400|MIHSV223109400-0X|Banco De Fomento Agropecuario (BFA)|
@@ -29,13 +30,13 @@ El Identificador de su pasarela utiliza el [formato internacional ETSI](https://
 |122175001|MIHSV122175001-0X|Corporación De Municipalidades de El Salvador (COMURES)|
 |112200903|MIHSV112200903-0X|Consejo Nacional de Administración de Bienes (CONAB)|
 |112101313|MIHSV112101313-0X|Comisión Nacional de La Micro Pequeña Empresa (CONAMYPE)|
-|112101003|MIHSV112101003-0X|Consejo Nacional De La Niñez Y De La Adolescencia  (CONNA)|
+|112101003|MIHSV112101003-0X|Consejo Nacional de la Niñez Y de la Adolescencia (CONNA)|
 |112201307|MIHSV112201307-0X|Consejo Salvadoreño De la Agroindustria Azucarera (CONSAA)|
 |221101304|MIHSV221101304-0X|Corporación Salvadoreña De Inversiones (CORSAIN)|
 |112101702|MIHSV112101702-0X|Corporación Salvadoreña de Turismo(CORSATUR)|
 |112101404|MIHSV112101404-0X|Consejo Salvadoreño Del Café (CSC)|
 |112101131|MIHSV112101131-0X|Consejo Superior De Salud Pública (CSSP)|
-|112101302|MIHSV112101302-0X|Consejo  de Vigilancia de la Profesión de Contaduría Pública y Auditoría (CVPCPA)|
+|112101302|MIHSV112101302-0X|Consejo de Vigilancia de la Profesión de Contaduría Pública y Auditoría (CVPCPA)|
 |112101309|MIHSV112101309-0X|Defensoría Del Consumidor (DC)|
 |111300700|MIHSV111300700-0X|Ministerio De La Defensa Nacional (DEFENSA)|
 |112201136|MIHSV112201136-0X|Dirección Nacional De Medicamentos (DNM)|
