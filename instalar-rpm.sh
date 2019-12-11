@@ -4,13 +4,8 @@ timedatectl set-timezone America/El_Salvador;
 echo "LC_ALL=en_US.UTF-8">> /etc/environment;
 
 #Nombre del Equipo
-hostnamectl set-hostname ssx.tenoli.gob.sv
+hostnamectl set-hostname ssx.tenoli.gob.sv;
 
-#USUARIO ADMIN - MODIFIQUE LA CONTRASEÑA!!!
-useradd -m xroad;
-echo 'xroad:xroad' | chpasswd;
-
-chown -R xroad:xroad /etc/xroad;
 yum install -y yum-utils;
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm;
 yum update -y;
@@ -23,7 +18,7 @@ yum --disablerepo=* localinstall -y *.rpm;
 
 #Agregar usuario administrador
 xroad-add-admin-user  xroad
-#Fijar contrasenia
+#CAMBIAR CONTRASEÑA
 echo 'xroad:xroad' | chpasswd;
 systemctl start xroad-proxy
 
