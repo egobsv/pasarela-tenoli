@@ -1,7 +1,7 @@
 
 ### Lista de códigos presupuestarios asignados por Hacienda.
 
-El Identificador de su pasarela utiliza el [formato internacional ETSI](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf) para la identificación de entidades.
+El Identificador de su(s) pasarela(s) utiliza el [formato internacional ETSI](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.01.01_60/en_31941201v010101p.pdf) para la identificación de entidades.
 
 |CÓDIGO|PASARELA|INSTITUCIÓN|
 |:-----------:|---------------------|:------------|
