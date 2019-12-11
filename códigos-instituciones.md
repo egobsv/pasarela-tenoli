@@ -8,18 +8,14 @@ El Identificador de su pasarela utiliza el [formato internacional ETSI](https://
 |111200200|MIHSV111200200-0X|Corte Suprema De Justicia (CSJ)|
 |112201501|MIHSV112201501-0X|Autoridad De Aviación Civil (AAC)|
 |112201503|MIHSV112201503-0X|Autoridad Marítima Portuaria (AMP)|
-|211101505|MIHSV211101505-0X|Administración Nacional De
-  Acueductos Y Alcantarillados (ANDA)|
-|112100901|MIHSV112100901-0X|Academia Nacional De Seguridad
-  Pública (ANSP)|
+|211101505|MIHSV211101505-0X|Administración Nacional De Acueductos Y Alcantarillados (ANDA)|
+|112100901|MIHSV112100901-0X|Academia Nacional De Seguridad Pública (ANSP)|
 |223109500|MIHSV223109500-0X|Banco De Desarrollo De El Salvador (BANDESAL)|
 |222109000|MIHSV222109000-0X|Banco Central De Reserva De El Salvador (BCR)|
 |223109400|MIHSV223109400-0X|Banco De Fomento Agropecuario (BFA)|
 |223109600|MIHSV223109600-0X|Banco Hipotecario De El Salvador (BH)|
-|112201004|MIHSV112201004-0X|Caja Mutual De Los Empleados Del
-  Ministerio De Educación (CAJAMINED)|
-|221100201|MIHSV221100201-0X|Caja Mutual Del Abogado De El
-  Salvador (CAMUDASAL)|
+|112201004|MIHSV112201004-0X|Caja Mutual De Los Empleados Del Ministerio De Educación (CAJAMINED)|
+|221100201|MIHSV221100201-0X|Caja Mutual Del Abogado de El Salvador (CAMUDASAL)|
 |111502300|MIHSV111502300-0X|Corte De Cuentas De La República (CCR)|
 |211200701|MIHSV211200701-0X|Centro Farmacéutico De La Fuerza Armada (CEFAFA)|
 |211101315|MIHSV211101315-0X|Comisión Ejecutiva Hidroeléctrica Del Río Lempa (CEL)|
@@ -33,8 +29,7 @@ El Identificador de su pasarela utiliza el [formato internacional ETSI](https://
 |122175001|MIHSV122175001-0X|Corporación De Municipalidades de El Salvador (COMURES)|
 |112200903|MIHSV112200903-0X|Consejo Nacional de Administración de Bienes (CONAB)|
 |112101313|MIHSV112101313-0X|Comisión Nacional de La Micro Pequeña Empresa (CONAMYPE)|
-|112101003|MIHSV112101003-0X|Consejo Nacional De La Niñez Y De La
-  Adolescencia  (CONNA)|
+|112101003|MIHSV112101003-0X|Consejo Nacional De La Niñez Y De La Adolescencia  (CONNA)|
 |112201307|MIHSV112201307-0X|Consejo Salvadoreño De la Agroindustria Azucarera (CONSAA)|
 |221101304|MIHSV221101304-0X|Corporación Salvadoreña De Inversiones (CORSAIN)|
 |112101702|MIHSV112101702-0X|Corporación Salvadoreña de Turismo(CORSATUR)|
@@ -48,8 +43,7 @@ El Identificador de su pasarela utiliza el [formato internacional ETSI](https://
 |112201316|MIHSV112201316-0X|Fondos Provenientes de la Privatización De ANTEL (FANTEL)|
 |112201405|MIHSV112201405-0X|Fondo De Emergencia Para El Café (FEC)|
 |111402000|MIHSV111402000-0X|Fiscalía General De La República (FGR)|
-|112101306|MIHSV112101306-0X|Fondo De Inversión Nacional en
-  Electricidad Y Telefonía (FINET)|
+|112101306|MIHSV112101306-0X|Fondo De Inversión Nacional en Electricidad Y Telefonía (FINET)|
 |112100303|MIHSV112100303-0X|Fondo De Inversión Social Para El Desarrollo Local (FISDL)|
 |112200304|MIHSV112200304-0X|Fondo Del Milenio (FOMILENIO)|
 |112101601|MIHSV112101601-0X|Fondo Ambiental De El Salvador (FONAES)|
@@ -61,32 +55,21 @@ El Identificador de su pasarela utiliza el [formato internacional ETSI](https://
 |221100305|MIHSV221100305-0X|Fondo Solidario Para la Familia Microempresaria (FOSOFAMILIA)|
 |112101502|MIHSV112101502-0X|Fondo De Conservación Vial (FOVIAL)|
 |221101507|MIHSV221101507-0X|Fondo Social Para La Vivienda (FSV)|
-|112301102|MIHSV112301102-0X|Hospital Nacional Benjamín Bloom
-  (HNBB)|
+|112301102|MIHSV112301102-0X|Hospital Nacional Benjamín Bloom (HNBB)|
 |112301101|MIHSV112301101-0X|Hospital Nacional Rosales (HNR)|
-|111502800|MIHSV111502800-0X|Instituto de Acceso a la Información
-  Pública (IAIP)|
-|112100301|MIHSV112100301-0X|Institutode El Salvadornacional De
-  Los Deportes (INDES)|
-|113200402|MIHSV113200402-0X|Instituto Nacional De Pensiones De
-  Los Empleados Públicos (INPEP)|
-|112101314|MIHSV112101314-0X|Instituto Salvadoreño De Fomento
-  Cooperativo (INSAFOCOOP)|
-|112201201|MIHSV112201201-0X|Instituto Salvadoreño De Formación
-  Profesional (INSAFORP)|
-|113200702|MIHSV113200702-0X|Instituto De Previsión Social de la
-  Fuerza Armada (IPSFA)|
-|113201005|MIHSV113201005-0X|Instituto Salvadoreño De Bienestar
-  Magisterial (ISBM)|
-|112100801|MIHSV112100801-0X|Instituto Salvadoreño De Desarrollo
-  Municipal (ISDEM)|
+|111502800|MIHSV111502800-0X|Instituto de Acceso a la Información Pública (IAIP)|
+|112100301|MIHSV112100301-0X|Institutode El Salvadornacional de  los Deportes (INDES)|
+|113200402|MIHSV113200402-0X|Instituto Nacional De Pensiones de  los Empleados Públicos (INPEP)|
+|112101314|MIHSV112101314-0X|Instituto Salvadoreño De Fomento Cooperativo (INSAFOCOOP)|
+|112201201|MIHSV112201201-0X|Instituto Salvadoreño De Formación Profesional (INSAFORP)|
+|113200702|MIHSV113200702-0X|Instituto De Previsión Social de la Fuerza Armada (IPSFA)|
+|113201005|MIHSV113201005-0X|Instituto Salvadoreño De Bienestar Magisterial (ISBM)|
+|112100801|MIHSV112100801-0X|Instituto Salvadoreño De Desarrollo Municipal (ISDEM)|
 |112100302|MIHSV112100302-0X|Instituto Salvadoreño de Desarrollo de la Mujer (ISDEMU)|
 |112101002|MIHSV112101002-0X|Instituto Salvadoreño Para el Desarrollo Integral de la Niñez y la Adolescencia (ISNA)|
-|112101132|MIHSV112101132-0X|Instituto Salvadoreño De
-  Rehabilitación Integral (ISRI)|
+|112101132|MIHSV112101132-0X|Instituto Salvadoreño De Rehabilitación Integral (ISRI)|
 |113201204|MIHSV113201204-0X|Instituto Salvadoreño Del Seguro Social (ISSS)|
-|112101401|MIHSV112101401-0X|Instituto Salvadoreño De
-  Transformación Agraria (ISTA)|
+|112101401|MIHSV112101401-0X|Instituto Salvadoreño de Transformación Agraria (ISTA)|
 |112101701|MIHSV112101701-0X|Instituto Salvadoreño De Turismo (ISTU)|
 |211200403|MIHSV211200403-0X|Lotería Nacional De Beneficencia (LNB)|
 |111301400|MIHSV111301400-0X|Ministerio De Agricultura Y Ganadería (MAG)|
