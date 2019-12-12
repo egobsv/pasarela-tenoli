@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:configurationAnchor xmlns:ns2="http://x-road.eu/xsd/identifiers" xmlns:ns3="http://x-road.eu/xsd/xroad.xsd">
+    <generatedAt>2019-12-12T19:38:04.324Z</generatedAt>
+    <instanceIdentifier>SV</instanceIdentifier>
+    <source>
+        <downloadURL>http://tenoli-sc.presidencia.gob.sv/internalconf</downloadURL>
+        <verificationCert>MIICqTCCAZGgAwIBAgIBATANBgkqhkiG9w0BAQ0FADAOMQwwCgYDVQQDDANOL0EwHhcNNzAwMTAxMDAwMDAwWhcNMzgwMTAxMDAwMDAwWjAOMQwwCgYDVQQDDANOL0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC1HNUGAAof8ukxox2lMqKo0G6rKgm0Y7wPWCCRXk/pr1COEix2Na38TRXDg7sWwJOu4qidZz1qxMTAKGpUnc2JvLxbuXH3XALuH9CFxazrNjr7mxo/2ic4TITKEHFWOmf9Z7snpBkt7ixANKbzUJV96Xfn3cw2YZX7BGjezyShlx88rLyVDFS4AeCDuqLlSwEZgsgV9rKnb+dR9I+Uq787j/+mz4QFVhWzFXRpTkgJBowC3iLuN9DKcQ8yqlzoPmTDu8N2yfks53rwtw5o6Cg54vVXada8vn3OzqSTyAoSeGrTElZ65WKi3LjhWMVxbTS9vujlNTVhouBUZ1py0aJRAgMBAAGjEjAQMA4GA1UdDwEB/wQEAwIGQDANBgkqhkiG9w0BAQ0FAAOCAQEAsoPKZy22XN9RMJH+6LPoTcEJ0AbFFmBBMTcJ+QgyQS/za/WulqbdQrZuIrGiYTWAWcnZp7VijBvrRlrvYXLC79770y03FA/LebydktUYWrRdlzDqfo88FaTtEmPv1qmoVxNyJhtYpSSqppnt5XzItl0pG9YG681ad49wRWZZ+FJ5OSN+UYeQPtP6HpB6xR5zBbJKf0VHgKVTBTPUaqos7fNFiVx99GX2AQdmDHs20YDYACMF/nGsatcZED2sUHtnJQk05sJHPgAHCxrXEUS+RoRbgggKC2YI6Ca1Kl6z3m9WgdOI3YNcpCBP/NC6/orJqvf/6dv7gCC8QiQZrHolzQ==</verificationCert>
+    </source>
+</ns3:configurationAnchor>
