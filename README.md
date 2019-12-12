@@ -5,7 +5,7 @@
   
 **Requisitos:** 
 * Ubuntu Bionic LTS / Debian 10 o superior. 
-* Al menos 2GB Ram y 3GB de disco duro.  
+* Al menos 3GB Ram y 3GB de disco duro.  
 * Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.
 * La IP de acceso público debe tener disponibles los siguientes puertos TCP:  
 	 - Ingreso: 5500, 5577, 9011, 9999 
