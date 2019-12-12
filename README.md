@@ -23,6 +23,7 @@ Si necesita hacer una instalación en alta disponibilidad puede leer la [documen
 ```sh
 ~# cd /opt/
 ~# wget https://github.com/egobsv/pasarela-tenoli/archive/master.zip
+~# apt-get install -y unzip;
 ~# unzip master.zip;mv pasarela-tenoli-master tenoli;
 ```
 2. Descarque los paquetes DEB (o RPMS)y guardelos en su servidor usando los siguientes comandos:
