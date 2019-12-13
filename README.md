@@ -44,7 +44,7 @@ Conéctese a la pasarela desde el navegador https://[DIRECCION IP]:4000/
 
 Use las credenciales que creó en el paso anterior, el sistema ingresa y pide el ancla de configuración inicial.
 
-El ancla de  configuración inicial contiene los parámetros de inicio definidos en el servidor central.  Esta información, guardada en un archivo XML conocido como ‘ancla de configuración’, está [disponible aquí.](https://github.com/egobsv/pasarela-tenoli/blob/master/SV-TEST_Ancla_de_configuraci%C3%B3n_2019-11-28.xml)  
+El ancla de  configuración inicial contiene los parámetros de inicio definidos en el servidor central.  Esta información, guardada en un archivo XML conocido como ‘ancla de configuración’ para ambiente de [Pruebas](SV-PRUEBAS_Ancla_de_configuración_2019-11-28.xml)  o [Poducción](SV-PRODUCCION_Ancla_de_configuración_2019_12_12.xml).
   
 Descargue, guarde este archivo en su máquina y luego regrese a la página de configuración de su pasarela para que pueda importar el ancla de configuración inicial.
 
