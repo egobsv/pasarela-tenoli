@@ -4,7 +4,7 @@
   Esta son las instrucciones para instalar la pasarela de Tenoli en su institución y poder formar parte de la plataforma distribuida de intercambio de información del Gobierno de El Salvador. Puede [conocer más sobre Tenoli en esta página](http://tenoli.gobiernoelectronico.gob.sv/).
   
 **Requisitos:** 
-* Ubuntu Bionic LTS / Debian 10 o superior. 
+* Ubuntu Bionic LTS o superior, Debian 10 (necesita sustituir java11 por java8), RHEL7/Centos7.  
 * Al menos 3GB Ram y 3GB de disco duro.  
 * Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.
 * La IP de acceso público debe tener disponibles los siguientes puertos TCP:  
