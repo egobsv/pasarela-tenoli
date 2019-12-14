@@ -86,7 +86,7 @@ Una vez la administración central de Tenoli autorice el registro, el estado cam
   
 Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este boqueando alguna conexión.  
   
-Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](https://github.com/egobsv/pasarela-tenoli/blob/master/publicar_servicio.md) para consumir o compartir datos con otras instituciones.
+Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](https://github.com/egobsv/pasarela-tenoli/blob/master/publicar_servicio.md) para consumir o compartir datos con otras instituciones. Dependiendo la cantidad de memoria disonible en la máquina también puede [mejorar el desempeño](desempeño.md) de la aplicación. 
 
 ## Licencia
 
