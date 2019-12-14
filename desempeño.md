@@ -11,10 +11,10 @@ Estos valores pueden ser incrementados según se sugiere a continuación:
 
 |Memoria Disponible|PROXY_PARAMS|SIGNER_PARAMS|
 |:------:|:------:|:-------:|
-|4 | -Xms200m -Xmx512m|	-Xms50m -Xmx100m|
-|8 |-Xms512m -Xmx2g | -Xms50m -Xmx150m |
-|16 | -Xms2g -Xmx8g | -Xms50m -Xmx200m |
-|32	| -Xms2g -Xmx16g | -Xms50m -Xmx200m |
+|4G | -Xms200m -Xmx512m|	-Xms50m -Xmx100m|
+|8G |-Xms512m -Xmx2g | -Xms50m -Xmx150m |
+|16G | -Xms2g -Xmx8g | -Xms50m -Xmx200m |
+|32G	| -Xms2g -Xmx16g | -Xms50m -Xmx200m |
 
 
 
