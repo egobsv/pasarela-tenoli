@@ -1,4 +1,4 @@
-## configuración de Memoria
+## Configuración de Memoria
 
 La pasarela de conexion es una aplicación java y su desempeño depende de la cantidad de memoria disponible en el sistema. 
 Por defecto los valores de memoria son los siguientes:
@@ -9,9 +9,8 @@ Por defecto los valores de memoria son los siguientes:
 
 Estos valores pueden ser incrementados segun se sugiere a continuación:
 
-|Memoria Disponible | PROXY_PARAMS	|SIGNER_PARAMS|
+|Memoria Disponible|PROXY_PARAMS|SIGNER_PARAMS|
 |:------:|:------:|:-------:|
-
 |4 | -Xms200m -Xmx512m|	-Xms50m -Xmx100m|
 |8 |-Xms512m -Xmx2g | -Xms50m -Xmx150m |
 |16 | -Xms2g -Xmx8g | -Xms50m -Xmx200m |
