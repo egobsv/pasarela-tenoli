@@ -43,7 +43,7 @@ Debe instalarse un nuevo certificado, que este autorizado, en la pasarela SS2. S
 La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica en la seccion de [firmar solicitud de pasarela de seguridad](crear_API_con_MTLS.md)
 
 
-**Comunicación entre pasarelas SS1 y SS2**
+**Comunicación entre sistemas SI1-SS1 hacia SS2-SI2**
 
 Es responsabilidad del administrador de la pasarela de consumo (SS1) solicitar acceso al servicio publicado en la pasarela de servicio (SS2). La comunicación no sera posible hasta que el administrador de SS2 agregue en su servicio de datos (SI2) una regla para que el servicio de consulta (SI1) pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
 
