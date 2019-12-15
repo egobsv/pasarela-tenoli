@@ -26,3 +26,6 @@ systemctl start xroad-proxy
 touch /etc/xroad/autologin;
 chown xroad:xroad /etc/xroad/autologin;
 echo "1234" >> /etc/xroad/autologin;
+
+#Para REDHAT los puertos estan definidos en /etc/xroad/conf.d/override-rhel-proxy.ini
+# 8080 y 8443
