@@ -42,8 +42,10 @@ Debe instalarse un nuevo certificado, que este autorizado, en la pasarela SS2. S
 
 La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica en la seccion de [firmar solicitud de pasarela de seguridad](crear_API_con_MTLS.md)
 
-**Comunicacion entre pasarelas SS1 y SS2**
-Es responsabilidad del administrador de la pasarela de consumo (SS1) solicitar acceso al servicio publicado en la pasarela de servicio (SS2). La comunicacion no sera posible hasta que el administrador de SS2 agregue en su servicio de datos (SI2) una regla para el servicio de consulta (SI1) pueda consumir los datos. Si no existe esa regla, el sistema respondera con error similar al siguiente:
+
+**Comunicación entre pasarelas SS1 y SS2**
+
+Es responsabilidad del administrador de la pasarela de consumo (SS1) solicitar acceso al servicio publicado en la pasarela de servicio (SS2). La comunicación no sera posible hasta que el administrador de SS2 agregue en su servicio de datos (SI2) una regla para que el servicio de consulta (SI1) pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
 
 ```
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
