@@ -1,31 +1,48 @@
 ## Gestión de Servicios
 
-###1. Conceptos ###
+### 1. Conceptos ###
+
+
+![Diagrama General - Fuente NIIS.org](diagrama-x-road.png)
+
 
 Conceptos generales de la plataforma nacional de interoperabildad.
 
-**Cliente** Un registro creado en la pasarela de seguridad que permite ofrecer y gesitonar un servicio interno o consumir el un servicio disponible en la plataforma.
+**Proveedor de Servicio:** Un sistema de información conectado a la plataforma a través de un cliente/pasarela de seguridad que ofrece datos a clientes autorizados.
 
-**Servicio** Una fuente de datos o sistema de información conectado a la plataforma a traves de un cliente.
+**Consumidor de Servicio:** Un sistema de información conectado a la plataforma a través de un cliente/pasarela de seguridad que consume datos como cliente autorizado.
 
-**Miembro**  Una organización o entidad afiliada, cada miembro controla uno o más clientes en la plataforma, que pueden operar como proveedor y / o consumidor de servicios.
+**Cliente:** Un registro creado en la pasarela de seguridad que permite gesitonar autoizaciones para que un sistema de información conectado a la plataforma funcione como consumidor o proveedor de servicio.
 
-**Servicios de Confianza** Conjunto de servicios de gestion de certificados, firmas y sellos digitales que hacen posible el funcionamiento de la plataforma. Estos incluyen una Autoridad de Certificación, validación (OCSP) y Sellos de tiempo (TSA) y son administrados por Presidencia.
+**Miembro:**  Una organización o entidad afiliada, cada miembro controla uno o más clientes en la plataforma, que pueden operar como proveedor y / o consumidor de servicios.
 
-**Catálogo Central** Indice central de miembros y sus clientes, disponible para todos los miembros activos de la red. El catálogo central también es reponsable de distibuir cambios en los servicios de confianza a toda la red.  
+**Servicios de Confianza:** Conjunto de servicios de gestion de certificados, firmas y sellos digitales que hacen posible el funcionamiento de la plataforma. Estos incluyen una Autoridad de Certificación, validación (OCSP) y Sellos de tiempo (TSA) y son administrados por Presidencia.
 
-**Tenoli** Es una instalación de X-Road, es la plataforma nacional de interoperabildad. Es un canal de comunicación estandarizado que proporciona una forma estándar de transferir información entre organizaciones y faciita la construcción servicios públicos integrados y seguros.
+**Catálogo Central:** Indice central de miembros y sus clientes, disponible para todos los miembros activos de la red. El catálogo central también es reponsable de distibuir cambios en los servicios de confianza a toda la red.  
 
-
-![Diagrama General](diagrama-x-road.png)
-
+**Tenoli:** Es una instalación de X-Road, es la plataforma nacional de interoperabildad. Es un canal de comunicación estandarizado que proporciona una forma estándar de transferir información entre organizaciones y faciita la construcción servicios públicos integrados y seguros.
 
 
+## 2. Modelo de Seguridad de Mensajes ##
 
-**Diagrama General**
+1. Sistema Consumidor ---- TUNEL (M)TLS --> Pasarela de Seguridad Consumidor
 
-SI1 -----> SS1 ---- TUNEL TLS/ RED PÚBLICA --- SS2--->SI2
+2. Pasarela de Seguridad Consumidor  ---- TLS/SERVICIOS DE CONFIANZA --> Pasarela de Seguridad Proveedor
 
+3. Pasarela de Seguridad Proveedor ---- TUNEL (M)TLS --> Sistema Proveedor 
+
+
+## 3. Autorización de Consumo de Servicio ###
+
+*Comunicación entre sistemas SI1-SS1 hacia SS2-SI2**
+
+Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** solicitar acceso/autorización al servicio publicado en la **Pasarela de Seguridad Proveedor**. La comunicación no sera posible hasta que el administrador proveedor agregue en su pasarela una regla para que el servicio de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
+
+```
+"type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
+```
+
+## 2. Servicio de Información ##
 * SI1: Sistema de información que consume datos  
 * SS1: Pasarela de seguridad con sub-sistema de consumo "sv-test/GOB/1001/consulta"
 * SS2: Pasarela de seguridad con sub-sistema que entrega datos
@@ -65,10 +82,3 @@ Debe instalarse un nuevo certificado, que este autorizado, en la pasarela SS2. S
 La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica en la seccion de [firmar solicitud de pasarela de seguridad](crear_API_con_MTLS.md)
 
 
-**Comunicación entre sistemas SI1-SS1 hacia SS2-SI2**
-
-Es responsabilidad del administrador de la pasarela de consumo (SS1) solicitar acceso al servicio publicado en la pasarela de servicio (SS2). La comunicación no sera posible hasta que el administrador de SS2 agregue en su servicio de datos (SI2) una regla para que el servicio de consulta (SI1) pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
-
-```
-"type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
-```
