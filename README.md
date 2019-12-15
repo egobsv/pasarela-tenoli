@@ -15,7 +15,7 @@ Ingreso: 80,443
 
 El equipo puede ser una maquina virtual o un servidor físico dedicado.  
 
-Si necesita hacer una instalación en alta disponibilidad puede leer la [documentación oficial](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/LoadBalancing/ig-xlb_x-road_external_load_balancer_installation_guide.md).
+A continuación se documenta la instalación de un único nodo.  Si necesita instalar varios nodos en alta disponibilidad puede leer la [documentación oficial](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/LoadBalancing/ig-xlb_x-road_external_load_balancer_installation_guide.md).
 
 **1. Instalar**
 
