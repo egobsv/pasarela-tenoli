@@ -41,12 +41,13 @@ Conceptos generales de la plataforma nacional de interoperabildad.
 ## 3. Autorización de Consumo de Servicio ###
 
 *Comunicación entre sistemas de consumo y proveedor de datos*
+
 Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** solicitar acceso/autorización al servicio publicado en la **Pasarela de Seguridad Proveedor**. La comunicación no sera posible hasta que el administrador proveedor agregue en su pasarela una regla para que el servicio de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
 
 ```
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
 ```
-## 4. Autorización red local Consumidor###
+## 4. Autorización red local Consumidor ##
 
 Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario crear y agregar un certificado interno usando los siguientes pasos:  
   
