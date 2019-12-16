@@ -1,0 +1,49 @@
+-------MAESTRO----
+systemctl stop xroad-*;
+cat <<EOF >/etc/systemd/system/postgresql-serverconf.service
+.include /lib/systemd/system/postgresql.service
+[Service]
+Environment=PGPORT=5433
+Environment=PGDATA=/var/lib/pgsql/serverconf
+EOF
+
+PGSETUP_INITDB_OPTIONS="--auth-local=peer --auth-host=md5" postgresql-setup initdb postgresql-serverconf
+semanage port -a -t postgresql_port_t -p tcp 5433
+systemctl enable postgresql-serverconf
+
+mkdir -p -m 0755 /etc/xroad/postgresql;
+cd /etc/xroad/postgresql;
+openssl req -new -x509 -days 7300 -nodes -sha256 -out ca.crt -keyout ca.key -subj '/O=cluster/CN=ca-replicacion';
+openssl req -new -nodes -days 7300 -keyout server.key -out server.csr -subj "/O=cluster/CN=nodo01";
+openssl x509 -req -in server.csr -CAcreateserial -CA ca.crt -CAkey ca.key -days 7300 -out server.crt;
+chmod o+x /etc/xroad;
+chown postgres /etc/xroad/postgresql/*;
+chmod 400 /etc/xroad/postgresql/*;
+
+#nano /var/lib/pgsql/serverconf/postgresql.conf
+ssl = on
+ssl_ca_file   = '/etc/xroad/postgresql/ca.crt'
+ssl_cert_file = '/etc/xroad/postgresql/server.crt'
+ssl_key_file  = '/etc/xroad/postgresql/server.key'
+
+listen_addresses = '*'    
+wal_level = hot_standby
+max_wal_senders   = 3   
+wal_keep_segments = 8   
+
+
+sudo -u postgres psql -p 5433 -c "CREATE ROLE slavenode NOLOGIN";
+sudo -u postgres psql -p 5433 -c "CREATE USER "nodo01" REPLICATION PASSWORD NULL IN ROLE slavenode";
+
+sudo -u postgres psql -p 5433 -c "CREATE USER serverconf PASSWORD 'maestro-replicado'";
+sudo -u postgres pg_dump -C serverconf | sudo -u postgres psql -p 5433 -f -;
+
+#Actualizar contrasenia y puerto en /etc/xroad/db.properties;
+systemctl restart postgresql-serverconf;
+systemctl start xroad-*;
+
+
+useradd -r -m -g xroad xroad-esclavo;
+sudo mkdir -m 755 -p /home/xroad-esclavo/.ssh && sudo touch /home/xroad-esclavo/.ssh/authorized_keys;
+
+#copiar llave del esclavos en esta carpeta

@@ -1,0 +1,106 @@
+---ESCLAVO PG 9.2---
+systemctl stop xroad-*;
+cat <<EOF >/etc/systemd/system/postgresql-serverconf.service
+.include /lib/systemd/system/postgresql.service
+[Service]
+Environment=PGPORT=5433
+Environment=PGDATA=/var/lib/pgsql/serverconf
+EOF
+
+PGSETUP_INITDB_OPTIONS="--auth-local=peer --auth-host=md5" postgresql-setup initdb postgresql-serverconf;
+semanage port -a -t postgresql_port_t -p tcp 5433;
+systemctl enable postgresql-serverconf;
+
+####Copiar certificados
+
+chown postgres /etc/xroad/postgresql/*;
+chmod 400 /etc/xroad/postgresql/*;
+cd /var/lib/pgsql/serverconf;rm -rf *;
+sudo -u postgres PGSSLMODE=verify-ca PGSSLROOTCERT=/etc/xroad/postgresql/ca.crt PGSSLCERT=/etc/xroad/postgresql/server.crt PGSSLKEY=/etc/xroad/postgresql/server.key pg_basebackup -h 10.0.10.12 -p 5433 -U nodo01 -D .
+##ignorar warning.
+
+nano recovery.conf;
+standby_mode = 'on'
+primary_conninfo = 'host=10.0.10.12  port=5433 user=nodo01 sslmode=verify-ca sslcert=/etc/xroad/postgresql/server.crt sslkey=/etc/xroad/postgresql/server.key sslrootcert=/etc/xroad/postgresql/ca.crt'
+trigger_file = '/var/lib/xroad/postgresql.trigger'
+
+chown postgres:postgres recovery.conf;
+chmod 400 recovery.conf;
+
+##nano postgresql.conf;
+ssl = on
+ssl_ca_file   = '/etc/xroad/postgresql/ca.crt'
+ssl_cert_file = '/etc/xroad/postgresql/server.crt'
+ssl_key_file  = '/etc/xroad/postgresql/server.key'
+
+listen_addresses = localhost
+
+# no need to send WAL logs
+# wal_level = minimal
+# max_wal_senders = 0
+# wal_keep_segments = 0
+
+hot_standby = on
+hot_standby_feedback = on
+
+#Actualizar contrasenia y puerto en /etc/xroad/db.properties;
+systemctl restart postgresql-serverconf;
+systemctl start xroad-*;
+
+
+--SYNC CONF
+su xroad;
+ ssh-keygen -t rsa; #sin contraseania.
+cat /var/lib/xroad/.ssh/id_rsa.pub;
+
+# copiar llave al maestro dentro de /home/xroad-esclavo/.ssh/authorized_keys
+
+nano /etc/systemd/system/xroad-sync.service;
+
+[Unit]
+Description=Tarea de Sincornizacion de X-Road 
+After=network.target
+Before=xroad-proxy.service
+Before=xroad-signer.service
+Before=xroad-confclient.service
+Before=xroad-jetty.service
+[Service]
+User=xroad
+Group=xroad
+Type=oneshot
+Environment=XROAD_USER=xroad-esclavo
+Environment=MASTER=10.0.10.12
+
+ExecStartPre=/usr/bin/test ! -f /var/tmp/xroad/sync-disabled
+
+ExecStart=/usr/bin/rsync -e "ssh -o ConnectTimeout=5 " -aqz --timeout=10 --delete-delay --exclude db.properties --exclude "/conf.d/node.ini" --exclude "*.tmp" --exclude "/postgresql" --exclude "/nginx" --exclude "/globalconf" --exclude "/jetty" --delay-updates --log-file=/var/log/xroad/esclavo-sync.log ${XROAD_USER}@${MASTER}:/etc/xroad/ /etc/xroad/
+[Install]
+WantedBy=multi-user.target
+WantedBy=xroad-proxy.service
+
+
+nano /etc/systemd/system/xroad-sync.timer;
+[Unit]
+Description=Configuracion Sync X-Road
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=60
+[Install]
+WantedBy=timers.target
+-------
+
+setsebool -P rsync_client 1;
+setsebool -P rsync_full_access 1;
+systemctl enable xroad-sync.timer xroad-sync.service;
+systemctl start xroad-sync.timer;
+
+nano /etc/logrotate.d/xroad-slave-sync;
+
+/var/log/xroad/esclavo-sync.log {
+        daily
+        rotate 7
+        missingok
+        compress
+        su xroad xroad
+        nocreate
+}
