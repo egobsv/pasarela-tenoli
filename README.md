@@ -23,8 +23,6 @@ Ingreso: 80,443
 
 El equipo puede ser una maquina virtual o un servidor físico dedicado.  
 
-A continuación se documenta la instalación de un único nodo.  Si necesita instalar varios nodos en alta disponibilidad puede leer la [documentación oficial](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/LoadBalancing/ig-xlb_x-road_external_load_balancer_installation_guide.md).
-
 **1. Instalar**
 
 1. Antes de iniciar debe obtener los archivos de instalacioón, puede hacerlo con los siguientes comandos:
@@ -95,6 +93,7 @@ Una vez la administración central de Tenoli autorice el registro, el estado cam
 Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este boqueando alguna conexión.  
   
 Con esto queda activada nuestra pasarela dentro de la red Tenoli. 
+Si necesita instalar varios nodos en alta disponibilidad puede leer la [documentación oficial](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/LoadBalancing/ig-xlb_x-road_external_load_balancer_installation_guide.md).
 
 
 ## Licencia ##
