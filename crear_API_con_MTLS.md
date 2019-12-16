@@ -101,11 +101,3 @@ Invocar la API enviando un certificado de cliente autorizado:
 ```
 ~# curl -k -E /etc/ssl/certs/cliente.crt--key /etc/ssl/private/cliente.key -k https://localhost:9443/;
 ```
-
-**Firmar petición de pasarela/servidor de seguridad**
-
-La pasarela de seguridad de TEONLI necesita obtener un certificado autorizado; para esto desde la pasarela se debe generar la solicitud de certificado (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado). El siguiente comando firma la solicitud 'pasarela.p10' y genera el archivo 'pasarela-autorizada.crt' que debe ser instalado en la pasarela (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, Importar).  
-
-```
-openssl x509 -req -days 365 -in /var/tmp/pasarela.p10 -CA /etc/ssl/certs/api-ac.crt -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /var/tmp/pasarela-autorizada.crt;
-```
