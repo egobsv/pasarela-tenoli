@@ -50,7 +50,6 @@ hot_standby_feedback = on
 
 #Actualizar contrasenia y puerto en /etc/xroad/db.properties;
 systemctl restart postgresql-serverconf;
-systemctl start xroad-*;
 
 
 --SYNC CONF
@@ -79,7 +78,7 @@ Environment=MASTER=10.0.10.12
 
 ExecStartPre=/usr/bin/test ! -f /var/tmp/xroad/sync-disabled
 
-ExecStart=/usr/bin/rsync -e "ssh -o ConnectTimeout=5 " -aqz --timeout=10 --delete-delay --exclude db.properties --exclude "/conf.d/node.ini" --exclude "*.tmp" --exclude "/postgresql" --exclude "/nginx" --exclude "/globalconf" --exclude "/jetty" --delay-updates --log-file=/var/log/xroad/esclavo-sync.log ${XROAD_USER}@${MASTER}:/etc/xroad/ /etc/xroad/
+ExecStart=/usr/bin/rsync --omit-dir-times -e "ssh -o ConnectTimeout=5 " -aqz --timeout=10 --delete-delay --exclude db.properties --exclude "/conf.d/node.ini" --exclude "*.tmp" --exclude "/postgresql" --exclude "/nginx" --exclude "/globalconf" --exclude "/jetty" --delay-updates --log-file=/var/log/xroad/esclavo-sync.log ${XROAD_USER}@${MASTER}:/etc/xroad/ /etc/xroad/
 [Install]
 WantedBy=multi-user.target
 WantedBy=xroad-proxy.service
@@ -105,9 +104,12 @@ nano /etc/logrotate.d/xroad-slave-sync;
         su xroad xroad
         nocreate
 }
---------
+
+nano /etc/xroad/conf.d/node.ini
+[node]
+type=slave
+
 setsebool -P rsync_client 1;
 setsebool -P rsync_full_access 1;
 systemctl enable xroad-sync.timer xroad-sync.service;
-systemctl start xroad-sync.timer;
-
+systemctl restart xroad-*;
