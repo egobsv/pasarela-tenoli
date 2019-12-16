@@ -6,7 +6,7 @@
  En este sitio entrará guías para:
  1. Instalar Pasarela (esta página)
  2. [Consumir Servicio en ambiente de pruebas](cliente-consumo.md)
- 3. [Crear API para entegar datos](crear_API_con_MTLS.md)
+ 3. [Crear API para entregar datos](crear_API_con_MTLS.md)
  4. [Publicar Servicio de datos en ambiente de pruebas](cliente-proveedor.md)
  5. [Evaluar desempeño, mejorar uso de RAM](desempeño.md)
  6. [Revisar Estadísticas de Uso](estadísticas/README.md)
@@ -94,8 +94,9 @@ Una vez la administración central de Tenoli autorice el registro, el estado cam
   
 Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este boqueando alguna conexión.  
   
-Con esto queda activada nuestra pasarela dentro de la red Tenoli. El siguiente paso es [agregar servicios](https://github.com/egobsv/pasarela-tenoli/blob/master/publicar_servicio.md) para consumir o compartir datos con otras instituciones. Dependiendo la cantidad de memoria disonible en la máquina también puede [mejorar el desempeño](desempeño.md) de la aplicación. 
+Con esto queda activada nuestra pasarela dentro de la red Tenoli. 
 
-## Licencia
+
+## Licencia ##
 
 Este trabajo esta cubierto dentro de la estrategia de desarrollo de servicios de Gobierno Electrónico del Gobierno de El Salvador y como tal es una obra de valor público sujeto a los lineamientos de la Política de Datos Abiertos y la licencia [CC-BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.es).  
