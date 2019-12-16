@@ -14,11 +14,13 @@ systemctl enable postgresql-serverconf;
 mkdir -p -m 0755 /etc/xroad/postgresql;
 cd /etc/xroad/postgresql;
 
-####Copiar certificado de Esclavo creado en el Maestro.
+####Copiar certificado de servidor creado en el Maestro.
 
 chown postgres /etc/xroad/postgresql/*;
 chmod 400 /etc/xroad/postgresql/*;
 cd /var/lib/pgsql/serverconf;rm -rf *;
+
+#Cambiar IP del MAESTRO -- 10.0.10.12 antes de correr este comando
 sudo -u postgres PGSSLMODE=verify-ca PGSSLROOTCERT=/etc/xroad/postgresql/ca.crt PGSSLCERT=/etc/xroad/postgresql/server.crt PGSSLKEY=/etc/xroad/postgresql/server.key pg_basebackup -h 10.0.10.12 -p 5433 -U nodo01 -D .
 ##ignorar warning.
 
@@ -92,11 +94,6 @@ OnUnitActiveSec=60
 WantedBy=timers.target
 -------
 
-setsebool -P rsync_client 1;
-setsebool -P rsync_full_access 1;
-systemctl enable xroad-sync.timer xroad-sync.service;
-systemctl start xroad-sync.timer;
-
 nano /etc/logrotate.d/xroad-slave-sync;
 
 /var/log/xroad/esclavo-sync.log {
@@ -107,3 +104,9 @@ nano /etc/logrotate.d/xroad-slave-sync;
         su xroad xroad
         nocreate
 }
+--------
+setsebool -P rsync_client 1;
+setsebool -P rsync_full_access 1;
+systemctl enable xroad-sync.timer xroad-sync.service;
+systemctl start xroad-sync.timer;
+
