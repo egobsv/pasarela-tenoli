@@ -38,7 +38,7 @@ Conceptos generales de la plataforma nacional de interoperabildad.
 - El tunel de red local del proveedor (3) utiliza  un certificado autofirmado que debe ser instalado en la pasarela y debe estar autorizado por el servidor web que recibe la petición (Sistema Proveedor).  
 
 
-## 3. Autorización de Consumo de Servicio ###
+## 3. Autorización de Consumo de Servicio ##
 
 *Comunicación entre sistemas de consumo y proveedor de datos*
 
