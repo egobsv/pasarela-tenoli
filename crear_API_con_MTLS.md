@@ -3,6 +3,8 @@
 
 El objetivo del ejercicio descrito en esta página es ofrecer un servicio en php usando HTTPS,  que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado. La identificación mútua TLS permite controlar el acceso a nuestra apliación usando certificados electrónicos.
 
+Esta guía usa PHP y Nginx, es posible configurar identificación mútua TLS en [Apache](http://www.stefanocapitanio.com/configuring-two-way-authentication-ssl-with-apache/), [JBoss](https://developer.jboss.org/wiki/MutualAuthenticationOnJBoss720Final)y [IIS](https://medium.com/@hafizmohammedg/configuring-client-certificates-on-iis-95aef4174ddb).
+
 **Crear servicio**
 
 El servicio de ejemplo utiliza un script PHP para regresar un objeto JSON con valores estaticos.
