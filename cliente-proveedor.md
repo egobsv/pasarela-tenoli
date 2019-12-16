@@ -1,4 +1,4 @@
-## Publicación de Servicios
+## Publicación de Servicios ##
 
 **Diagrama General**
 
@@ -11,7 +11,7 @@ SI1 -----> SS1 ---- TUNEL TLS/ RED PÚBLICA --- SS2--->SI2
 
 Donde el servicio ***sv-test/GOB/XXXX/consulta***, es un cliente debidamente registrado, donde ***XXXXX*** es el código del miembro que desea consumir los datos.   
 
-**Comunicación entre Pasarela y API de datos**
+### Comunicación entre Pasarela y API de datos ###
 
 Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario agregar el certificado a la lista de certificados TLS internos.  El certificado debe ser el mismo que utiliza el servidor donde reside la API de datos (SI2). Por ejemplo para un servidor Nginx se debe subir el certificado definido en la propiedad 'ssl_certificate':
 
@@ -20,7 +20,7 @@ Desde la ventana de configuración del sistema, en la pestaña "Servidores Inter
  ```
  Si su API no utiliza autorización mutua TLS, la configuración esta lista.   
 
-**Comunicación entre Pasarela y API de datos usando MTLS**
+### Comunicación entre Pasarela y API de datos usando MTLS ###
 
 El sistema de información requiere un certificado de cliente autorizado, la Pasarela de seguridad Proveedor enviará automaticamente su certificado interno. Si el certificado no está autorizado se generará este error:
 ```
@@ -31,12 +31,8 @@ Debe instalarse un nuevo certificado, que este autorizado. Para esto, seleccione
 
 La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica en la seccion de [firmar solicitud de pasarela de seguridad](crear_API_con_MTLS.md)
 
-El certificado certificado firmado por la autoridad certificadora correspondiente debe ser instalado en la pasarela, para esto seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, importar.
 
-En este punto la configuración esta terminada y estamos listos para realizar purebas. 
-
-
-**Firmar petición de Pasarela Proveedor para API con MTLS**
+### Firmar petición de Pasarela Proveedor para API con MTLS ###
 
 La pasarela de seguridad del Proveedor necesita obtener un certificado autorizado; para esto desde la pasarela se debe generar la solicitud de certificado (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado). El siguiente comando firma la solicitud 'pasarela.p10' y genera el archivo 'pasarela-autorizada.crt' que debe ser instalado en la pasarela (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, Importar).  
 
