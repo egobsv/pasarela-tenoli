@@ -54,6 +54,7 @@ systemctl start xroad-*;
 
 
 --SYNC CONF
+yum install -y rsync;
 su xroad;
  ssh-keygen -t rsa; #sin contraseania.
 cat /var/lib/xroad/.ssh/id_rsa.pub;
