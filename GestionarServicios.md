@@ -42,9 +42,9 @@ Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** 
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
 ```
 
-## 2. Servicio de Información ##
+## 4. Ambiente de Pruebas##
 * SI1: Sistema de información que consume datos  
-* SS1: Pasarela de seguridad con sub-sistema de consumo "sv-test/GOB/1001/consulta"
+* SS1: Pasarela de seguridad con sub-sistema de consumo "sv-test/GOB/xxxx/consulta"
 * SS2: Pasarela de seguridad con sub-sistema que entrega datos
 * SI2: Sistema de información que produce datos. "sv-test/GOB/1001/api-pruebas/consulta-pruebas"
 
@@ -62,23 +62,3 @@ Asegurase de subir e archivo consumidor-api.crt a la lista de certificados TLS i
 ```
 curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/1001/consulta' -i 'https://localhost/r1/sv-test/GOB/1001/api-pruebas/consulta-pruebas'
 ``` 
-
-**Comunicación SS2 ---> SI2**
-Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario agregar el certificado a la lista de certificados TLS internos.  El certificado debe ser el mismo que utiliza el servidor donde reside el sistema de información interno (SS2). Por ejemplo para un servidor Nginx se debe subir el certificado de la propiedad 'ssl_certificate':
-
-```
-  ssl_certificate /etc/ssl/certs/api-autofirmado.crt;
- ```
-      
-**SI2 con MTLS**
-
-Si el sistema de información requiere un certificado de clietne autorizado, el servidor de seguridad SS2 enviará automaticamente su certificado interno. Si el certificado no esta autorizado se generara este error:
-```
-{"type":"Server.ServerProxy.SslAuthenticationFailed","message":"Server certificate is not trusted",
-```
-
-Debe instalarse un nuevo certificado, que este autorizado, en la pasarela SS2. Seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado. Ingrese el sujeto que desea usar en su nuevo certificado: CN=servicios.local,OU=Ministerio xxx,O=Gobierno de El Salvador,C=SV. 
-
-La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica en la seccion de [firmar solicitud de pasarela de seguridad](crear_API_con_MTLS.md)
-
-
