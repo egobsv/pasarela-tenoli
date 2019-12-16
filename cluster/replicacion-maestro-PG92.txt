@@ -44,7 +44,7 @@ echo "hostssl     replication     +slavenode  samenet     cert" >>/var/lib/pgsql
 systemctl restart postgresql-serverconf;
 systemctl start xroad-*;
 
-
+yum install -y rsync;
 useradd -r -m -g xroad xroad-esclavo;
 sudo mkdir -m 755 -p /home/xroad-esclavo/.ssh && sudo touch /home/xroad-esclavo/.ssh/authorized_keys;
 
