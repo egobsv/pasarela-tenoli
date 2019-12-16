@@ -18,7 +18,7 @@ Desde la ventana de configuración del sistema, en la pestaña "Servidores Inter
 ```
   ssl_certificate /etc/ssl/certs/api-autofirmado.crt;
  ```
- Si su API no utiliza autorización mutua TLS, la configuración esta lista.   
+ Si su API no utiliza autorización mutua TLS, la configuración esta terminada.   
 
 ### Comunicación entre Pasarela y API de datos usando MTLS ###
 
@@ -29,7 +29,7 @@ El sistema de información requiere un certificado de cliente autorizado, la Pas
 
 Debe instalarse un nuevo certificado, que este autorizado. Para esto, seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado. Ingrese el sujeto que desea usar en su nuevo certificado: CN=servicios.local,OU=Ministerio xxx,O=Gobierno de El Salvador,C=SV. 
 
-La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica en la seccion de [firmar solicitud de pasarela de seguridad](crear_API_con_MTLS.md)
+La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica a continuación.
 
 
 ### Firmar petición de Pasarela Proveedor para API con MTLS ###
