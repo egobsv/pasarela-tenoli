@@ -38,6 +38,8 @@ sudo -u postgres psql -p 5433 -c "CREATE USER "nodo01" REPLICATION PASSWORD NULL
 sudo -u postgres psql -p 5433 -c "CREATE USER serverconf PASSWORD 'maestro-replicado'";
 sudo -u postgres pg_dump -C serverconf | sudo -u postgres psql -p 5433 -f -;
 
+echo "hostssl     replication     +slavenode  samenet     cert" >>/var/lib/pgsql/serverconf/pg_hba.conf;
+
 #Actualizar contrasenia y puerto en /etc/xroad/db.properties;
 systemctl restart postgresql-serverconf;
 systemctl start xroad-*;
