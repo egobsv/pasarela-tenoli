@@ -44,7 +44,7 @@ Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** 
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
 ```
 
-## 4. Ambiente de Pruebas##
+## 4. Ambiente de Pruebas ##
 * SI1: Sistema de información que consume datos  
 * SS1: Pasarela de seguridad con sub-sistema de consumo "sv-test/GOB/xxxx/consulta"
 * SS2: Pasarela de seguridad con sub-sistema que entrega datos
