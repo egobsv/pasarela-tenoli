@@ -42,10 +42,20 @@ echo "hostssl     replication     +slavenode  samenet     cert" >>/var/lib/pgsql
 
 #Actualizar contrasenia y puerto en /etc/xroad/db.properties;
 systemctl restart postgresql-serverconf;
-systemctl start xroad-*;
 
 yum install -y rsync;
 useradd -r -m -g xroad xroad-esclavo;
 sudo mkdir -m 755 -p /home/xroad-esclavo/.ssh && sudo touch /home/xroad-esclavo/.ssh/authorized_keys;
 
 #copiar llave del esclavos en esta carpeta
+
+nano /etc/xroad/conf.d/node.ini
+[node]
+type=master
+
+nano /etc/xroad/conf.d/local.ini
+[proxy]
+server-support-clients-pooled-connections=false
+
+
+systemctl start xroad-*;
