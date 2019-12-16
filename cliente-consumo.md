@@ -42,11 +42,14 @@ Conceptos generales de la plataforma nacional de interoperabildad.
 
 *Comunicación entre sistemas de consumo y proveedor de datos*
 
-Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** solicitar acceso/autorización al servicio publicado en la **Pasarela de Seguridad Proveedor**. La comunicación no sera posible hasta que el administrador proveedor agregue en su pasarela una regla para que el servicio de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
+Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** solicitar acceso/autorización al servicio publicado en la **Pasarela de Seguridad Proveedor**. Para hacer pruebas está disponible el servicio **sv-test/GOB/1001/api-pruebas/consulta-pruebas**. Para poder consumirlo es encesario registrar un cliente en su pasarela y solicitar acceso. Antes de continuar asegurese de completar este proceso. 
+
+La comunicación no será posible hasta que el administrador proveedor agregue en su pasarela una regla para que su servicio de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
 
 ```
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
 ```
+
 ## 4. Autorización red local Consumidor ##
 
 Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario crear y agregar un certificado interno usando los siguientes pasos:  
@@ -57,5 +60,5 @@ openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-a
 
 Asegurase de subir e archivo consumidor-api.crt a la lista de certificados TLS internos y luego pruebe el servicio usando los certificados que acaba de crear desde su sistema de información que consume datos o usando la siguiente linea de comandos:
 ```
-curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/1001/consulta' -i 'https://localhost/r1/sv-test/GOB/1001/api-pruebas/consulta-pruebas'
+curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/XXXXXX/consulta' -i 'https://localhost/r1/sv-test/GOB/1001/api-pruebas/consulta-pruebas'
 ``` 

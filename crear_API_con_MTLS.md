@@ -1,13 +1,11 @@
 
-## Identificación MTLS
+## Crear API para entregar datos ##
 
-La identificación mútua TLS permite controlar el acceso a nuestra apliación usando certificados electrónicos.
-
-El objetivo del ejercicio descrito en esta página es ofrecer un servicio en php usando HTTPS y que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado.
+El objetivo del ejercicio descrito en esta página es ofrecer un servicio en php usando HTTPS,  que esta disponible únicamente a usuarios que tengan un certificado de cliente autorizado. La identificación mútua TLS permite controlar el acceso a nuestra apliación usando certificados electrónicos.
 
 **Crear servicio**
 
-El servicio de ejemplo utiliza un script PHP para regresar un objeto JSON.
+El servicio de ejemplo utiliza un script PHP para regresar un objeto JSON con valores estaticos.
 ```
 ~# apt-get install php7.2 php7.2-fpm
 
@@ -28,7 +26,7 @@ echo "\n".$data;
 
 **Servidor HTTPS**
 
-Para servir nuestra API vamos a crear un Host virtual en Nginx. El primer paso es crear lso certificados que utilizaremos en el servicio https.   
+Para servir nuestra API vamos a crear un Host virtual en Nginx. El primer paso es crear los certificados que utilizaremos en el servicio https.   
 
 *Crear autoridad certificadora, certificado web y parámetros para HTTPS:
 
@@ -81,7 +79,7 @@ server {
 }
 
 ```
-Al llamar la api sin un certificado autorizado, el servidor responderá con un error:
+Al llamar la api sin un certificado autorizado, el servidor responderá con un error indicando que la llamada requiere una certificado autorizado:
 ```
 ~# curl -k https://localhost:9443/
 <html>
