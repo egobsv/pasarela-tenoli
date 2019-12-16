@@ -33,26 +33,20 @@ Conceptos generales de la plataforma nacional de interoperabildad.
 
 3. Pasarela de Seguridad Proveedor ---- TUNEL (M)TLS --> Sistema Proveedor 
 
+- El tunel TLS entre Pasarelas de Seguridad (2) utiliza los certificados frimados por la autoridad cetificadora de Presidencia. 
+- El tunel de red local del consuimidor (1) utiliza  un certificado autofirmado que debe ser instalado en la pasarela.  
+- El tunel de red local del proveedor (3) utiliza  un certificado autofirmado que debe ser instalado en la pasarela y debe estar autorizado por el servidor web que recibe la petición (Sistema Proveedor).  
+
 
 ## 3. Autorización de Consumo de Servicio ###
 
-*Comunicación entre sistemas SI1-SS1 hacia SS2-SI2**
-
+*Comunicación entre sistemas de consumo y proveedor de datos*
 Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** solicitar acceso/autorización al servicio publicado en la **Pasarela de Seguridad Proveedor**. La comunicación no sera posible hasta que el administrador proveedor agregue en su pasarela una regla para que el servicio de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
 
 ```
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
 ```
-
-## 4. Ambiente de Pruebas ##
-* SI1: Sistema de información que consume datos  
-* SS1: Pasarela de seguridad con sub-sistema de consumo "sv-test/GOB/xxxx/consulta"
-* SS2: Pasarela de seguridad con sub-sistema que entrega datos
-* SI2: Sistema de información que produce datos. "sv-test/GOB/1001/api-pruebas/consulta-pruebas"
-
-El tunel TLS entre SS1 y SS2  utiliza los certificados frimados por la autoridad cetificadora de Presidencia. 
-
-**Comunicación SI1 ---> SS1**
+## 4. Autorización red local Consumidor###
 
 Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario crear y agregar un certificado interno usando los siguientes pasos:  
   
