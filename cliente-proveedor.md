@@ -4,8 +4,8 @@
 
 RED TENOLI ---> SS--->SI
 
-* SS: Pasarela de seguridad con sub-sistema que entrega datos
-* SI: Sistema de información que produce datos. Ejm: "sv-test/GOB/1001/api-pruebas"
+* SS: Pasarela de seguridad con sub-sistema que entrega datos.  Ejm: "sv-test/GOB/1001/api-pruebas"
+* SI: Sistema de información interno que produce datos.
 
 Es responsabilidad de cada institución implementar los mecanismos que garanticen la seguridad de las comunicaciones entre sistemas en su red local; esto incluye la comunicacion entre su Pasarela de Seguridad y su Sistema de Información.  
 
