@@ -13,7 +13,7 @@ La Pasarela de Seguriad ofrece tres modos de conexión hacia sistemas en su red 
 
 |Modo|Protocolo| Seguridad|
 |-----|------|------|
-|HTTPS| HTTPS con verficación de certificado y autenticación de cliente (MTLS)| Nivel alto de seguridad|
+|HTTPS| HTTPS certificado validado y autenticación de cliente (MTLS)| Nivel alto de seguridad|
 |HTTPS NOAUTH| HTTPS con con verficación de certificado |Nivel básico de seguridad|
 |HTTP|HTTP en texto plano| Inseguro, no recomendado|
 
