@@ -7,9 +7,19 @@ RED TENOLI ---> SS--->SI
 * SS: Pasarela de seguridad con sub-sistema que entrega datos
 * SI: Sistema de información que produce datos. Ejm: "sv-test/GOB/1001/api-pruebas"
 
-El servidor que ofrece la API puede estar configurado para usar: HTTP, HTTPS, HTTPS con autenticación (MTLS). 
+Es responsabilidad de cada institución implementar los mecanismos que garanticen la seguridad de las comunicaciones entre sistemas en su red local; esto incluye la comunicacion entre su Pasarela de Seguridad y su Sistema de Información.  
 
-Para ambientes de producción se recomienda usar HTTPS con MTLS. La Pasarela de seguridad asume que su API esta usando HTTPS con MTLS. Para modificar este valor, desde la ventana de configuración, seleccione "Servidors Internos" y en la sección 'TIPO DE CONEXIÓN..' seleccione el tipo de conexión que desea usar.  
+La Pasarela de Seguriad ofrece tres modos de conexión hacia sistemas en su red local:
+
+|Modo|Protocolo| Seguridad|
+|-----|------|------|
+|HTTPS| HTTPS con verficación de certificado y autenticación de cliente (MTLS)| Nivel alto de seguridad|
+|HTTPS NOAUTH| HTTPS con con verficación de certificado |Nivel básico de seguridad|
+|HTTP|HTTP en texto plano| Inseguro, no recomendado|
+
+El modo de conexión se configura en la pestaña "Servidores Internos" de su servicio. El modo por defecto que utiliza la pasarela es HTTPS, es decir el más alto, este el nivel recomendado para ambientes en producción. La configruación del servidor que ofrece la API en su red interna deber corresponder al modo de conexión seleccionado.
+
+Para modificar el modo de conexión, desde la ventana de configuración de su servicio, seleccione "Servidors Internos" y en la sección 'TIPO DE CONEXIÓN..' seleccione el tipo de conexión que desea usar.  
 
 
 ### Comunicación entre Pasarela y API de datos usando HTTPS ###
