@@ -8,17 +8,18 @@ RED TENOLI ---> SS--->SI
 * SI: Sistema de información que produce datos. Ejm: "sv-test/GOB/1001/api-pruebas"
 
 El servidor que ofrece la API puede estar configurado para usar: HTTP, HTTPS, HTTPS con autenticación (MTLS). 
+
 Para ambientes de producción se recomienda usar HTTPS con MTLS. La Pasarela de seguridad asume que su API esta usando HTTPS con MTLS. Para modificar este valor, desde la ventana de configuración, seleccione "Servidors Internos" y en la sección 'TIPO DE CONEXIÓN..' seleccione el tipo de conexión que desea usar.  
 
 
 ### Comunicación entre Pasarela y API de datos usando HTTPS ###
 
-Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario agregar el certificado a la lista de certificados TLS internos.  El certificado debe ser el mismo que utiliza el servidor donde reside la API de datos (SI2). Por ejemplo para un servidor Nginx se debe subir el certificado definido en la propiedad 'ssl_certificate':
+Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno a HTTPS NOAUTH. La pasarela verifica el certificado TLS de la API por lo que es necesario agregar el certificado a la lista de certificados TLS internos.  El certificado debe ser el mismo que utiliza el servidor donde reside la API de datos (SI2). Por ejemplo para un servidor Nginx se debe subir el certificado definido en la propiedad 'ssl_certificate':
 
 ```
   ssl_certificate /etc/ssl/certs/api-autofirmado.crt;
  ```
- Si su API no utiliza autorización mutua TLS, la configuración esta terminada.   
+Desde la ventana de configuración, seleccione "Servidors Internos", presione el botón agregar y suba el certificado correspondiente.  Si su API no utiliza autorización mutua TLS, la configuración esta terminada.   
 
 ### Comunicación entre Pasarela y API de datos usando HTTPS con MTLS ###
 
