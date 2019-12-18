@@ -2,16 +2,16 @@
 
 **Diagrama General**
 
-SI1 -----> SS1 ---- TUNEL TLS/ RED PÚBLICA --- SS2--->SI2
+RED TENOLI ---> SS--->SI
 
-* SI1: Sistema de información que consume datos  
-* SS1: Pasarela de seguridad con sub-sistema de consumo "sv-test/GOB/XXXX/consulta"
-* SS2: Pasarela de seguridad con sub-sistema que entrega datos
-* SI2: Sistema de información que produce datos. "sv-test/GOB/1001/api-pruebas"
+* SS: Pasarela de seguridad con sub-sistema que entrega datos
+* SI: Sistema de información que produce datos. Ejm: "sv-test/GOB/1001/api-pruebas"
 
-Donde el servicio ***sv-test/GOB/XXXX/consulta***, es un cliente debidamente registrado, donde ***XXXXX*** es el código del miembro que desea consumir los datos.   
+El servidor que ofrece la API puede estar configurado para usar: HTTP, HTTPS, HTTPS con autenticación (MTLS). 
+Para ambientes de producción se recomienda usar HTTPS con MTLS. La Pasarela de seguridad asume que su API esta usando HTTPS con MTLS. Para modificar este valor, desde la ventana de configuración, seleccione "Servidors Internos" y en la sección 'TIPO DE CONEXIÓN..' seleccione el tipo de conexión que desea usar.  
 
-### Comunicación entre Pasarela y API de datos ###
+
+### Comunicación entre Pasarela y API de datos usando HTTPS ###
 
 Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario agregar el certificado a la lista de certificados TLS internos.  El certificado debe ser el mismo que utiliza el servidor donde reside la API de datos (SI2). Por ejemplo para un servidor Nginx se debe subir el certificado definido en la propiedad 'ssl_certificate':
 
@@ -20,7 +20,7 @@ Desde la ventana de configuración del sistema, en la pestaña "Servidores Inter
  ```
  Si su API no utiliza autorización mutua TLS, la configuración esta terminada.   
 
-### Comunicación entre Pasarela y API de datos usando MTLS ###
+### Comunicación entre Pasarela y API de datos usando HTTPS con MTLS ###
 
 El sistema de información requiere un certificado de cliente autorizado, la Pasarela de seguridad Proveedor enviará automaticamente su certificado interno. Si el certificado no está autorizado se generará este error:
 ```
