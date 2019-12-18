@@ -13,8 +13,8 @@ La Pasarela de Seguriad ofrece tres modos de conexión hacia sistemas en su red 
 
 |Modo|Protocolo| Seguridad|
 |-----|------|------|
-|HTTPS| HTTPS certificado validado y autenticación de cliente (MTLS)| Nivel alto de seguridad|
-|HTTPS NOAUTH| HTTPS con con verficación de certificado |Nivel básico de seguridad|
+|HTTPS| HTTPS con certificado validado y autenticación de cliente (MTLS)| Nivel alto de seguridad|
+|HTTPS NOAUTH| HTTPS con certificado validado |Nivel básico de seguridad|
 |HTTP|HTTP en texto plano| Inseguro, no recomendado|
 
 El modo de conexión se configura en la pestaña "Servidores Internos" de su servicio. El modo por defecto que utiliza la pasarela es HTTPS, es decir el más alto, este el nivel recomendado para ambientes en producción. La configruación del servidor que ofrece la API en su red interna deber corresponder al modo de conexión seleccionado.
@@ -22,23 +22,32 @@ El modo de conexión se configura en la pestaña "Servidores Internos" de su ser
 Para modificar el modo de conexión, desde la ventana de configuración de su servicio, seleccione "Servidors Internos" y en la sección 'TIPO DE CONEXIÓN..' seleccione el tipo de conexión que desea usar.  
 
 
-### Comunicación entre Pasarela y API de datos usando HTTPS ###
+### Conexión entre Pasarela y API interna en modo HTTPS NOAUTH ###
 
-Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno a HTTPS NOAUTH. La pasarela verifica el certificado TLS de la API por lo que es necesario agregar el certificado a la lista de certificados TLS internos.  El certificado debe ser el mismo que utiliza el servidor donde reside la API de datos. Por ejemplo para un servidor Nginx se debe subir el certificado definido en la propiedad 'ssl_certificate':
+Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno a HTTPS NOAUTH. La pasarela verifica el certificado TLS de la API por lo que es necesario agregar el certificado a la lista de certificados TLS internos.  Si el certificado no está autorizado se generará este error:
+```
+{"type":"Server.ServerProxy.SslAuthenticationFailed","message":"Server certificate is not trusted",
+```
+
+El certificado debe ser el mismo que utiliza el servidor donde reside la API de datos. Por ejemplo para un servidor Nginx se debe subir el certificado definido en la propiedad 'ssl_certificate':
 
 ```
   ssl_certificate /etc/ssl/certs/api-autofirmado.crt;
  ```
 Desde la ventana de configuración, seleccione "Servidors Internos", presione el botón agregar y suba el certificado correspondiente.  Si su API no utiliza autorización mutua TLS, la configuración esta terminada.   
 
+
 ### Comunicación entre Pasarela y API de datos usando HTTPS con MTLS ###
 
-El sistema de información requiere un certificado de cliente autorizado, la Pasarela de seguridad Proveedor enviará automaticamente su certificado interno. Si el certificado no está autorizado se generará este error:
+Al igual que en el modo HTTPS NOAUTH, este modo de conexión require agregar el certificado TLS del servidor. Adicionalemente, la API esta configurada para autenticar al cliente usando certificados ([ver ejemplo]crear_API_con_MTLS.md)). Si se trata de llamar la API sin presentar un certificado de cliente,  el servidor respondera con un error:
+
 ```
-{"type":"Server.ServerProxy.SslAuthenticationFailed","message":"Server certificate is not trusted",
+No required SSL certificate was sent
 ```
 
-Debe instalarse un nuevo certificado, que este autorizado. Para esto, seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado. Ingrese el sujeto que desea usar en su nuevo certificado: CN=servicios.local,OU=Ministerio xxx,O=Gobierno de El Salvador,C=SV. 
+La asarela de seguridad Proveedor enviará automaticamente su certificado interno para autenticarse ante la API, este certificado es deconocido para el servidor donde reside la API, por lo fallara la conexión. 
+
+Debe instalarse en la Pasarela un nuevo certificado, que este autorizado por el Servidor que ofrece la API. Para esto, seleccione Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado. Ingrese el sujeto que desea usar en su nuevo certificado: CN=servicios.local,OU=Ministerio xxx,O=Gobierno de El Salvador,C=SV. 
 
 La petición/soliciud de certificado debe ser firmada por la Autoridad Certificadora que esta usando el servidor web, como se explica a continuación.
 
