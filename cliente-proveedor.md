@@ -39,7 +39,7 @@ Desde la ventana de configuración, seleccione "Servidors Internos", presione el
 
 ### Comunicación entre Pasarela y API de datos usando HTTPS con MTLS ###
 
-Al igual que en el modo HTTPS NOAUTH, este modo de conexión require agregar el certificado TLS del servidor. Adicionalemente, la API esta configurada para autenticar al cliente usando certificados ([ver ejemplo]crear_API_con_MTLS.md)). Si se trata de llamar la API sin presentar un certificado de cliente,  el servidor respondera con un error:
+Al igual que en el modo HTTPS NOAUTH, este modo de conexión require agregar el certificado TLS del servidor. Adicionalemente, la API esta configurada para autenticar al cliente usando certificados ([ver ejemplo](crear_API_con_MTLS.md)). Si se trata de llamar la API sin presentar un certificado de cliente,  el servidor respondera con un error:
 
 ```
 No required SSL certificate was sent
