@@ -52,8 +52,12 @@ La comunicación no será posible hasta que el administrador proveedor agregue e
 
 ## 4. Autorización red local Consumidor ##
 
-Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación; por lo que es necesario crear y agregar un certificado interno usando los siguientes pasos:  
-  
+Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación, la pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
+```
+{"type":"Server.ClientProxy.SslAuthenticationFailed","message":"Client (SUBSYSTEM:SV/GOB/XXXX/XXXX) specifies HTTPS but did not supply TLS certificate"}
+```
+
+Para presentar un certificado autorizado es necesario crear y agregar un certificado interno usando los siguientes pasos:  
 ```
 openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-api.key -out consumidor-api.crt -subj "/C=SV/O=Gobierno de El Salvador/O=PRUEBAS/OU=CERTIFICADO AUTOFRIMADO/CN= Consumidor - API de Integración de datos"
 ```
