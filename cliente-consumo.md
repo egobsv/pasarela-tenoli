@@ -1,10 +1,10 @@
 ## Consumo de Datos ##
 
-** 1. Autorización de Consumo de Servicio **
+### 1. Autorización de Consumo de Servicio ###
 
 *Comunicación entre sistemas de consumo y proveedor de datos*
 
-Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** solicitar acceso/autorización al servicio publicado en la **Pasarela de Seguridad Proveedor**. Para hacer pruebas está disponible el servicio **sv-test/GOB/1001/api-pruebas/consulta-pruebas**. Para poder consumirlo es encesario registrar un cliente en su pasarela y solicitar acceso. Antes de continuar asegurese de completar este proceso. 
+Es responsabilidad del administrador de la **Pasarela de Seguridad Consumidor** solicitar acceso/autorización al servicio publicado en la **Pasarela de Seguridad Proveedor**. Para hacer pruebas está disponible el servicio **sv-test/GOB/1001/api-pruebas/consulta-pruebas** en el ambiente de pruebas de Tenoli. Para poder consumirlo es encesario registrar un cliente en su pasarela y solicitar acceso. Antes de continuar asegurese de completar este proceso. 
 
 La comunicación no será posible hasta que el administrador proveedor agregue en su pasarela una regla para que su servicio de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
 
@@ -12,7 +12,7 @@ La comunicación no será posible hasta que el administrador proveedor agregue e
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
 ```
 
-** 2. Autorización red local Consumidor **
+### 2. Autorización red local Consumidor ###
 
 Para consumir un servicio desde la red interna, primero debe crearse el sub-sistema consumidor (vacío). Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación, la pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
 ```
