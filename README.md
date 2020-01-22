@@ -4,6 +4,7 @@
   Esta son las instrucciones para instalar la pasarela de Tenoli en su institución y poder formar parte de la plataforma distribuida de intercambio de información del Gobierno de El Salvador. Puede [conocer más sobre Tenoli en esta página](http://tenoli.gobiernoelectronico.gob.sv/).
 
  En este sitio encontrará guías para:
+ 1. [Conceptos Generales](conceptos-generales.md)
  1. Instalar Pasarela (esta página)
  2. [Consumir Servicio en ambiente de pruebas](cliente-consumo.md)
  3. [Crear API para entregar datos](crear_API_con_MTLS.md)
