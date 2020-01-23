@@ -1,0 +1,76 @@
+
+### ESCLAVO ###
+
+~# su xroad;
+~# ssh-keygen -t rsa; #sin contraseania.
+~# cat /var/lib/xroad/.ssh/id_rsa.pub;
+
+----- copiar llave al maestro dentro de /home/xroad-esclavo/.ssh/authorized_keys
+
+~# nano /etc/systemd/system/xroad-sync.service;
+
+[Unit]
+Description=Tarea de Sincornizacion de X-Road 
+After=network.target
+Before=xroad-proxy.service
+Before=xroad-signer.service
+Before=xroad-confclient.service
+Before=xroad-jetty.service
+[Service]
+User=xroad
+Group=xroad
+Type=oneshot
+Environment=XROAD_USER=xroad-esclavo
+Environment=MASTER=10.0.10.12
+
+ExecStartPre=/usr/bin/test ! -f /var/tmp/xroad/sync-disabled
+
+ExecStart=/usr/bin/rsync --omit-dir-times -e "ssh -o ConnectTimeout=5 " -aqz --timeout=10 --delete-delay --exclude db.properties --exclude "/conf.d/node.ini" --exclude "*.tmp" --exclude "/postgresql" --exclude "/nginx" --exclude "/globalconf" --exclude "/jetty" --delay-updates --log-file=/var/log/xroad/esclavo-sync.log ${XROAD_USER}@${MASTER}:/etc/xroad/ /etc/xroad/
+[Install]
+WantedBy=multi-user.target
+WantedBy=xroad-proxy.service
+
+
+~# nano /etc/systemd/system/xroad-sync.timer;
+[Unit]
+Description=Configuracion Sync X-Road
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=60
+[Install]
+WantedBy=timers.target
+
+~# nano /etc/logrotate.d/xroad-slave-sync;
+
+/var/log/xroad/esclavo-sync.log {
+        daily
+        rotate 7
+        missingok
+        compress
+        su xroad xroad
+        nocreate
+}
+
+~# nano /etc/xroad/conf.d/node.ini
+[node]
+type=slave
+
+~# systemctl enable xroad-sync.timer xroad-sync.service;
+~# systemctl restart xroad-*;
+
+
+
+### MAESTRO ###
+
+~# useradd -r -m -g xroad xroad-esclavo;
+~# sudo mkdir -m 755 -p /home/xroad-esclavo/.ssh && sudo touch /home/xroad-esclavo/.ssh/authorized_keys;
+
+#copiar llave del esclavos en esta carpeta
+
+~# nano /etc/xroad/conf.d/node.ini
+[node]
+type=master
+
+~# nano /etc/xroad/conf.d/local.ini
+[proxy]
+server-support-clients-pooled-connections=false
