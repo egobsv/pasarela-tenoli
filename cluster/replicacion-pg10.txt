@@ -1,0 +1,39 @@
+
+### MASTER ### 
+
+~#service postgresql stop
+
+~#nano /etc/postgresql/10/main/postgresql.conf
+
+listen_addresses='*'
+wal_level= logical
+
+~# sudo -u postgres psql; 
+psql> CREATE ROLE replicador WITH REPLICATION LOGIN PASSWORD 'replicador';
+psql>\c serverconf;
+psql> CREATE PUBLICATION xroadMaestro FOR ALL TABLES;
+psql>GRANT SELECT ON ALL TABLES IN SCHEMA public TO replicador;
+psql>\q
+
+~#nano /etc/postgresql/10/main/pg_hba.conf 
+host         all            all             192.168.1.2/32      md5
+
+~# service postgresql start
+
+
+### SLAVE ###
+
+~# service postgresql stop
+
+~# nano /etc/postgresql/10/main/postgresql.conf
+
+listen_addresses='*'
+wal_level=logical
+
+~# service postgresql start
+
+~# sudo -u postgres psql; 
+psql> CREATE ROLE replicador WITH REPLICATION LOGIN PASSWORD 'replicador';
+psql>GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO replicador;
+psql/>CREATE SUBSCRIPTION xroadEsclavo CONNECTION 'host=192.168.1.2 port=5432 password=replicador user=replicador dbname=serverconf' PUBLICATION xroadMaestro;
+psql>\q
