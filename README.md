@@ -38,11 +38,11 @@ El equipo puede ser una maquina virtual o un servidor físico dedicado.
 ~# cd /opt/tenoli/;
 ~# wget -r -nH -np --cut-dirs=1 http://tenoli.gobiernoelectronico.gob.sv/paquetes/deb/;
 ```
-3. Modifique las direcciones IP y define el usuario y contraseña de administrador de la pasarela dentro del archivo ss-respuestas.txt. La instalación creara el usaurio automaticamente, una vez realizados los cambios ejecute el script de instalación:
+3. Modifique las direcciones IP y define el usuario y contraseña de administrador de la pasarela dentro del archivo ss-respuestas.txt. La instalación creara el usaurio automaticamente (instalar-deb.sh),  una vez realizados los cambios ejecute el script de instalación:
 ```sh
 ~# nano ss-respuestas.txt;
-~# chmod +x instalar.sh
-~# ./instalar.sh
+~# chmod +x instalar-deb.sh
+~# ./instalar-deb.sh
 ```
 
 **2. Inicializar Pasarela**
