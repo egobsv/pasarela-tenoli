@@ -74,14 +74,14 @@ Este registro se hace a través de certificados de Firma Electrónica Simple  y 
 Para iniciar este registro ingrese a la sección de 'Llaves y certificados' y genere las solicitudes de registro siguientes usando los datos de su institución.
 
 * Certificado de Autorización - Este certificado será utilizado por las instituciones miembro de la red Tenoli para identificar a su pasarela. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar CSR', y en el recuadro a continuación:
-		Seleccione la autoridad "certifiacdora raíz" y Formato CSR "PEM" antes de presionar el botón OK para avanzar  		      la siguiente paso.
+		Seleccione 'Autorizar' en el menu Uso, luego la autoridad "certificadora raíz" y finalmente elija Formato CSR "PEM" antes de presionar el botón OK para avanzar al siguiente paso.
 		En el segundo recuadro, ingrese el nombre de su institución y el nombre de dominio que usara su pasarela, 		  ej: tenoli.minec.gob.sv 
 
 * Certificado de Firma - Este certificado será utilizado por su pasarela para firmar mensajes. Para crearlo debe presionar el botón 'Generar Llave', luego el botón 'Generar CSR', y en el recuadro a continuación:
-		Seleccione la autoridad "certifiacdora raíz" y Formato CSR "PEM" antes de presionar el botón OK para avanzar  		      la siguiente paso. En el segundo recuadro, ingrese el nombre de su institución.
+		Seleccione 'Firmar' en el menu Uso, la autoridad "certificadora raíz", escriba 'Gobierno de El Salvador' como nombre de Organizacion y elija y Formato CSR "PEM" antes de presionar el botón OK para avanzar al siguiente paso. En el segundo recuadro, ingrese el nombre de su institución.
 
 
-El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas a l correo dquijada @ presidencia.gob.sv. Una vez procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
+El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas al correo dquijada @ presidencia.gob.sv. Una vez procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
 
 **4. Finalizar Registro**
 
