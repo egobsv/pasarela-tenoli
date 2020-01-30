@@ -1,0 +1,25 @@
+La version libre de NGINX permite hacer balanceo de puertos TCP, solomente es necesario balancear dos puertos 
+(5500,5577) y no debe terminar las conexiones HTTS. La configuración quedaría mas o menos así: 
+
+stream {
+    upstream  tenoli-consultas{
+        # Ingreso de solicitudes para consultar datos
+        server 1.2.3.4:5500;
+	server 1.2.3.5:5500;
+    }
+    upstream  tenoli-certs{
+        # Ingreso de solicitudes para verificar estado de certificados
+        server 1.2.3.4:5577;
+	server 1.2.3.5:5577;
+    }
+
+    server {
+        listen 5500;
+	access_log  /var/log/nginx/consultas-tenoli.log;
+        proxy_pass tenoli-consultas;
+    }
+    server {
+        listen 5577;
+        proxy_pass tenoli-certs;
+    }
+} 
