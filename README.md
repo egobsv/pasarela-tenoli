@@ -26,19 +26,19 @@ El equipo puede ser una maquina virtual o un servidor físico dedicado.
 
 **1. Instalar**
 
-1. Antes de iniciar debe obtener los archivos de instalacioón, puede hacerlo con los siguientes comandos:
+1. Antes de iniciar debe obtener los archivos de instalación, puede hacerlo con los siguientes comandos:
 ```sh
 ~# cd /opt/
 ~# wget https://github.com/egobsv/pasarela-tenoli/archive/master.zip
 ~# apt-get install -y unzip;
 ~# unzip master.zip;mv pasarela-tenoli-master tenoli;
 ```
-2. Descarque los paquetes DEB (o RPMS)y guardelos en su servidor usando los siguientes comandos:
+2. Descargue los paquetes DEB (o RPMS)y guárdelos en su servidor usando los siguientes comandos:
 ```sh
 ~# cd /opt/tenoli/;
 ~# wget -r -nH -np --cut-dirs=1 http://tenoli.gobiernoelectronico.gob.sv/paquetes/deb/;
 ```
-3. Modifique las direcciones IP y define el usuario y contraseña de administrador de la pasarela dentro del archivo ss-respuestas.txt. La instalación creara el usaurio automaticamente (instalar-deb.sh),  una vez realizados los cambios ejecute el script de instalación:
+3. Modifique las direcciones IP y define el usuario y contraseña de administrador de la pasarela dentro del archivo ss-respuestas.txt. La instalación creará el usuario automáticamente (instalar-deb.sh),  una vez realizados los cambios ejecute el script de instalación:
 ```sh
 ~# nano ss-respuestas.txt;
 ~# chmod +x instalar-deb.sh
@@ -80,17 +80,17 @@ Para iniciar este registro ingrese a la sección de 'Llaves y certificados' y ge
 		Seleccione 'Firmar' en el menu Uso, la autoridad "certificadora raíz" y elija y Formato CSR "PEM" antes de presionar el botón OK para avanzar al siguiente paso. En el segundo recuadro, ingrese el nombre de su institución.
 
 
-El sistema genera y descarga automáticamente las peticiones de certificados a su maquina, estas deberán ser enviadas al correo dquijada @ presidencia.gob.sv. Una vez procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
+El sistema genera y descarga automáticamente las peticiones de certificados a su máquina, estas deberán ser enviadas al correo dquijada @ presidencia.gob.sv. Una vez procesadas las solicitudes, se entregarán los certificados para que pueda finalizar el registro.
 
 **4. Finalizar Registro**
 
-Usando los certificados que recibió, ingrese a su pasarela, seleccione la opcion 'Llaves y certificados', presione el botón 'importar certificado' y luego importe sus certificados de Autorización y Firma.  
+Usando los certificados que recibió, ingrese a su pasarela, seleccione la opción 'Llaves y certificados', presione el botón 'importar certificado' y luego importe sus certificados de Autorización y Firma.  
   
 Con el certificado de Identidad, una vez importado, deberá realizarse el registro de su pasarela. Seleccione el certificado Identidad, y presione el botón 'Activar' y luego 'Registrar'. El estado del certificado cambia a 'registro en progreso'. 
 
-Una vez la administración central de Tenoli autorice el registro, el estado cambiara a 'registrado'  
+Una vez la administración central de Tenoli autorice el registro, el estado cambiará a 'registrado'  
   
-Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este boqueando alguna conexión.  
+Es importante verificar que la página de diagnóstico, desde el menú principal, no muestre errores. Si aparece algún  error (indicador rojo) revise el Firewall de su red, es probable que se este bloqueando alguna conexión.  
   
 Con esto queda activada nuestra pasarela dentro de la red Tenoli. 
 Si necesita instalar varios nodos en alta disponibilidad puede leer la [documentación oficial](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/LoadBalancing/ig-xlb_x-road_external_load_balancer_installation_guide.md).
