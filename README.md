@@ -18,7 +18,7 @@
 * Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.
 * La IP de acceso público debe tener disponibles los siguientes puertos TCP:  
 	 - Ingreso: 5500, 5577
-	- Egreso: 5500, 5577, 4001, 2080, 80, 443 
+	- Egreso: 5500, 5577, 4001, 80, 443 
 * La IP de interna debe tener disponibles los siguientes puertos TCP:  
 Ingreso: 80,443
 
