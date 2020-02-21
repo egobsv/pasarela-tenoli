@@ -17,7 +17,7 @@
 * Al menos 3GB Ram y 3GB de disco duro.  
 * Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.
 * La IP de acceso público debe tener disponibles los siguientes puertos TCP:  
-	 - Ingreso: 5500, 5577, 9011, 9999 
+	 - Ingreso: 5500, 5577
 	- Egreso: 5500, 5577, 4001, 2080, 80, 443 
 * La IP de interna debe tener disponibles los siguientes puertos TCP:  
 Ingreso: 80,443
