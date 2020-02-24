@@ -15,7 +15,7 @@ Para consultar el historico de mensajes de un subsistema, se debe utilizar el me
         -d @/var/tmp/ejemplo-consulta-historico.xml --header "Content-Type: text/xml" \
          -X POST http://localhost --output /var/tmp/respuesta.multipart
 ```
-La respuesta de la consulta es un mensaje SOAP con adjuntos binarios; el script consulta.py realiza la consulta sobre estadisitcas de los últimos 30 días, procesa la respuesta y guarda los registros json en un archivo. Las variables del script se pueden ajsutar para diferentes servicios y rangos del reporte. 
+La respuesta de la consulta es un mensaje SOAP con adjuntos binarios; el script consulta.py realiza la consulta sobre estadisitcas de los últimos 30 días, procesa la respuesta y guarda los registros json en un archivo. Las variables del script se pueden ajustar para obtener estadísticas de distintos servicios, en diferentes rangos de tiempo. 
 
 ```
  ~# python3 consulta.py
@@ -44,12 +44,12 @@ Al usar certificados autofirmados dentro del script de python, el sistema muestr
 ```
 /usr/lib/python3/dist-packages/urllib3/connectionpool.py:860: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
 ```
-Una forma de eliminar este mensaje es exporatando la siguiente variable
+Una forma de eliminar este mensaje es exportando la siguiente variable:
 ```
 ~# export PYTHONWARNINGS="ignore:Unverified HTTPS request"
 ```
 
-Para consultar el estadístico de desempeño de un sub-sistema puede editarse y usarse la consulta SOAP de ejemplo usnado el siguiente comando:
+Para consultar el estadístico de desempeño de un sub-sistema puede editarse y usarse la consulta SOAP de ejemplo usando el siguiente comando:
 ```
  curl -k -E /var/tmp/consumidor-api.crt --key /var/tmp/consumidor-api.key \
         -d @/var/tmp/ejemplo-consulta-desempeno.xml --header "Content-Type: text/xml" \
