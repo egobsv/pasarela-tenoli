@@ -1,8 +1,10 @@
 ## Estadísticas de Uso
 
 La plataforma genera información estadística de uso de la pasarela sobre:
- * Historico de mensajes procesados por cada sub-sistema/servicio administrado por la pasarela
- * Desempeño de servicios publicados (tiempos de respuesta, tamaño de los mensajes, etc) 
+ * Mensajes procesados por cada sub-sistema/servicio administrado por la pasarela
+ * Desempeño de servicios publicados (tiempos de respuesta, tamaño de los mensajes, etc.) 
+ 
+ __El contenido de los mensajes enviados no esta expuesto en este servicio.__
  
  La descripción de las variables, posibles parametros de consulta y estructura de los mensajes de respuesta estan definidos en [esta página](https://github.com/nordic-institute/X-Road/blob/6.22.0/doc/OperationalMonitoring/Protocols/pr-opmon_x-road_operational_monitoring_protocol_Y-1096-2.md)
 
