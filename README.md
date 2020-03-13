@@ -16,9 +16,13 @@
 * Ubuntu Bionic LTS o superior, Debian 10 (necesita sustituir java11 por java8), RHEL7/Centos7.  
 * Al menos 3GB Ram y 3GB de disco duro.  
 * Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.
-* La IP de acceso público debe tener disponibles los siguientes puertos TCP:  
+* La IP de acceso público debe tener disponibles los siguientes puertos TCP (ver lista de Acceso):  
 	 - Ingreso: 5500, 5577
 	- Egreso: 5500, 5577, 4001, 80, 443 
+	
+* Lista de Acceso servicios centrales: 200.35.189.75, 200.35.189.101 y 200.35.189.103 	
+* Lista de Acceso clientes: IPs de insituciones que consuman los servicios de esta pasarela.
+
 * La IP de interna debe tener disponibles los siguientes puertos TCP:  
 Ingreso: 80,443
 
