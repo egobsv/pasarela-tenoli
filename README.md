@@ -20,7 +20,7 @@
 	 - Ingreso: 5500, 5577
 	- Egreso: 5500, 5577, 4001, 80, 443 
 	
-* Lista de Acceso servicios centrales: 200.35.189.75, 200.35.189.101 y 200.35.189.103 	
+* Lista de Acceso servicios centrales: Completar formulario de registro para recibir IPs 	
 * Lista de Acceso clientes: IPs de insituciones que consuman los servicios de esta pasarela.
 
 * La IP de interna debe tener disponibles los siguientes puertos TCP:  
