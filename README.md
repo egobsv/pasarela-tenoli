@@ -57,7 +57,9 @@ Use las credenciales que creó en el paso anterior, el sistema ingresa y pide el
 
 El ancla de  configuración inicial contiene los parámetros de inicio definidos en el servidor central.  Esta información, guardada en un archivo XML conocido como ‘ancla de configuración’ para ambiente de [Pruebas](SV-PRUEBAS_Ancla_de_configuración_2019-11-28.xml)  o [Poducción](SV-PRODUCCION_Ancla_de_configuración_2019_12_12.xml).
   
-Descargue, guarde este archivo en su máquina y luego regrese a la página de configuración de su pasarela para que pueda importar el ancla de configuración inicial.
+Descargue, guarde este archivo en su máquina y luego regrese a la página de configuración de su pasarela para que pueda importar el ancla de configuración inicial. Una vez importada el ancla parecerá un formulario que debe ser completado de la siguiente forma:
+
+* Asegurese que elegir GOB como 'Member Class'. 
 
 * Ingresar el [código presupuestario](códigos-instituciones.md) asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Hacienda es 111300400.
 
