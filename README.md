@@ -61,9 +61,9 @@ Descargue, guarde este archivo en su máquina y luego regrese a la página de co
 
 * Asegurese que elegir GOB como 'Member Class'. 
 
-* Ingresar el [código presupuestario](códigos-instituciones.md) asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Hacienda es 111300400.
+* Ingrese el [código presupuestario](códigos-instituciones.md) asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Hacienda es 111300400.
 
-* Ingresar el identificador de su pasarela, este valor será parte del certificado electrónico que identificará a su pasarela. El identificador depende del [código de su institución](códigos-instituciones.md) Por ejemplo: MIHSV111300400-01. 
+* Ingrese el identificador de su pasarela, este valor será parte del certificado electrónico que identificará a su pasarela. El identificador depende del [código de su institución](códigos-instituciones.md) Por ejemplo: MIHSV111300400-01. 
 
 * Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
 
