@@ -3,9 +3,9 @@
 **Nota**: La plataforma X-ROAD llama Clientes y Subsistemas a las API y Enpoints. 
 
 
-Tanto la institución que consume como la que ofrece datos administran su propia Pasarela de Seguridad con una API/Subsistema disponible para realizar el intercambio. Es responsabilidad del administrador de la API **Consumidor de Servicio** solicitar acceso/autorización para usar API **Proveedor de Servicio** que se desea consumir. 
+Tanto la institución que consume como la que ofrece datos administran su propia Pasarela de Seguridad con una API/Cliente disponible para realizar el intercambio. Es responsabilidad del administrador de la API **Consumidor de Servicio** solicitar acceso/autorización para usar API **Proveedor de Servicio** que se desea consumir. 
 
-La API de consumo es un subsistema vacío, para crearla se pueden seguir las [instrucciones de creación de cliente de la pasarela](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ug-ss_x-road_6_security_server_user_guide.md#4-security-server-clients). Esta API se usará para solicitar acceso a los datos que deseamos conusmir desde un sistema interno.
+La API de consumo es un Cliente vacío, para crearlo se pueden seguir las [instrucciones de creación de cliente de la pasarela](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ug-ss_x-road_6_security_server_user_guide.md#4-security-server-clients). Esta API se usará para solicitar acceso a los datos que deseamos conusmir desde un sistema interno.
 
 ```
 |Sistema Interno que solicita datos|---->|Pasarela/API de Consumiror|
@@ -46,13 +46,13 @@ Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS 
 ### 2. Autorización de Consumo ###
 *Comunicación entre sistemas de consumo y proveedor de datos*
 
-Antes  de poder consumir un subsitema/API publicado en una pasarela externa, es necesario obtener la autorización del administrador respectivo. 
-La comunicación no será posible hasta que el administrador proveedor agregue en su pasarela una regla para que su API/subsistema de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
+Antes  de poder consumir un Cliente/API publicado en una pasarela externa, es necesario obtener la autorización del administrador respectivo. 
+La comunicación no será posible hasta que el administrador proveedor agregue en su pasarela una regla para que su API/Cliente de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
 
 ```
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
 ```
-Una vez el reponsable del servicio que se desea consumir agregue la regla, usted estara listo para empezar a consumirlo. Para hacer pruebas puede solicitar acceso al subsitema/API **sv-test/GOB/1001/api-pruebas/consulta-pruebas** en el ambiente de pruebas de Tenoli.
+Una vez el reponsable del servicio que se desea consumir agregue la regla, usted estara listo para empezar a consumirlo. Para hacer pruebas puede solicitar acceso al Cliente/API **sv-test/GOB/1001/api-pruebas/consulta-pruebas** en el ambiente de pruebas de Tenoli.
 
 ### 3. Consumo de Datos###
 
