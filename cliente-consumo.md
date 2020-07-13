@@ -19,7 +19,7 @@ La API de consumo es un Cliente vacío, para crearlo se pueden seguir las [instr
 
 Ejemplo llamada para solicitar datos:
 ```
-curl -k -X GET -H 'X-Road-Client: NOMPRE_API_CONSULTA' -i 'https://1.2.3.4/r1/NOMBRE_API_PROVEEDOR'
+curl -k -X GET -H 'X-Road-Client: NOMPRE_API_LOCAL' -i 'https://1.2.3.4/r1/NOMBRE_API_PROVEEDOR'
 ``` 
 
 Donde 1.2.3.4 es la IP de nuestra pasarela. Es posible hacer esta llmada desde la misma pasarela usando 'localhost'  
@@ -58,6 +58,6 @@ Una vez el reponsable del servicio que se desea consumir agregue la regla, usted
 
 Una vez autorizado, podemos invocar nuestra API de consumo desde la red local. La llamada local esta protegida con MTLS, por lo que debe usar el certificado y llave que creados en el paso 1:
 ```
-curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/XXXXXX/consulta' 
+curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/XXXXXX/NOMBRE_API_LOCAL' 
 -i 'https://localhost/r1/sv-test/GOB/1001/api-pruebas/consulta-pruebas'
 ``` 
