@@ -44,10 +44,10 @@ Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS 
 
 
 ### 2. Autorización de Consumo ###
-*Comunicación entre sistemas de consumo y proveedor de datos*
+*Comunicación entre API/Cliente local de consumo y API/Cliente remoto proveedor de datos*
 
 Antes  de poder consumir un Cliente/API publicado en una pasarela externa, es necesario obtener la autorización del administrador respectivo. 
-La comunicación no será posible hasta que el administrador proveedor agregue en su pasarela una regla para que su API/Cliente de consulta pueda consumir los datos. Si no existe esa regla, el sistema responderá con un error similar al siguiente:
+La comunicación no será posible hasta que el administrador proveedor agregue en su pasarela una regla para que su API/Cliente de consulta pueda consumir los datos. Si no existe esa regla de acceso en la pasarela remota, el sistema responderá con un error similar al siguiente:
 
 ```
 "type":"Server.ServerProxy.AccessDenied"","message":"Request is not allowed: SERVICE: ...
