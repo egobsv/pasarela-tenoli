@@ -26,9 +26,9 @@ Donde 1.2.3.4 es la IP de nuestra pasarela. Es posible hacer esta llmada desde l
 
 ### 1. Comunicación red local Consumidor ###
 
-Por defecto, la pasarela únicamente responde a llamadas que incluyan un certificado autorizado (Mutual TLS).
+Por defecto, la pasarela únicamente responde a llamadas que incluyan un certificado autorizado (Mutual TLS/HTTPS con autenticación).
 
-En la confiduración de su API de consumo, desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. La pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
+En la confiduración de su API/Cliente de consumo, desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. La pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
 ```
 {"type":"Server.ClientProxy.SslAuthenticationFailed",
 "message":"Client (SUBSYSTEM:SV/GOB/XXXX/XXXX) specifies HTTPS but did not supply TLS certificate"}
