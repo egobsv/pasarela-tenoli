@@ -54,7 +54,7 @@ La comunicación no será posible hasta que el administrador proveedor agregue e
 ```
 Una vez el reponsable del servicio que se desea consumir agregue la regla, usted estara listo para empezar a consumirlo. Para hacer pruebas puede solicitar acceso al Cliente/API **sv-test/GOB/1001/api-pruebas/consulta-pruebas** en el ambiente de pruebas de Tenoli.
 
-### 3. Consumo de Datos###
+### 3. Consumo de Datos ###
 
 Una vez autorizado, podemos invocar nuestra API de consumo desde la red local. La llamada local esta protegida con MTLS, por lo que debe usar el certificado y llave que creados en el paso 1:
 ```
