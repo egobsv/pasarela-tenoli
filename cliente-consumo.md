@@ -1,12 +1,20 @@
 ## Consumo de Datos ##
 
-Nota:X-ROAD se refiere a las APIs como Subsistemas. 
+**Nota**: La plataforma X-ROAD llama Clientes y Subsistemas a las API y Enpoints. 
+
 
 Tanto la institución que consume como la que ofrece datos administran su propia Pasarela de Seguridad con una API/Subsistema disponible para realizar el intercambio. Es responsabilidad del administrador de la API **Consumidor de Servicio** solicitar acceso/autorización para usar API **Proveedor de Servicio** que se desea consumir. 
 
 La API de consumo es un subsistema vacío, para crearla se pueden seguir las [instrucciones de creación de cliente de la pasarela](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ug-ss_x-road_6_security_server_user_guide.md#4-security-server-clients). Esta API se usará para solicitar acceso a los datos que deseamos conusmir desde un sistema interno.
 
-Sistema Interno que solicita datos|-----|Pasarela/API de Consumiror|----|RED TENOLI|----|Pasarela/API de Proveedor|---|Sistema Interno que ofrece Datos
+|Sistema Interno que solicita datos|-----|Pasarela/API de Consumiror|
+   |
+   |
+|RED TENOLI|
+   |
+   |
+|Pasarela/API de Proveedor|---|Sistema Interno que ofrece Datos
+
 
 Ejemplo llamada para solicitar datos:
 ```
@@ -21,12 +29,14 @@ La parela de defecto únicamente responde a llamadas con que incluyan un certifi
 
 En la confiduracion de su API de consumo, desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación, la pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
 ```
-{"type":"Server.ClientProxy.SslAuthenticationFailed","message":"Client (SUBSYSTEM:SV/GOB/XXXX/XXXX) specifies HTTPS but did not supply TLS certificate"}
+{"type":"Server.ClientProxy.SslAuthenticationFailed",
+"message":"Client (SUBSYSTEM:SV/GOB/XXXX/XXXX) specifies HTTPS but did not supply TLS certificate"}
 ```
 
 Para presentar un certificado autorizado es necesario crear y agregar un certificado interno usando los siguientes pasos:  
 ```
-openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-api.key -out consumidor-api.crt -subj "/C=SV/O=Gobierno de El Salvador/O=PRUEBAS/OU=CERTIFICADO AUTOFRIMADO/CN= Consumidor - API de Integración de datos"
+openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-api.key -out consumidor-api.crt 
+-subj "/C=SV/O=Gobierno de El Salvador/O=PRUEBAS/OU=CERTIFICADO AUTOFRIMADO/CN= Consumidor - API de Integración de datos"
 ```
 
 Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS internos desde el recuadro de configuración de 'Servidores Internos' del servicio.
@@ -48,5 +58,6 @@ Una vez el reponsable del servicio que se desea consumir agregue la regla, usted
 
 Una vez autorizda, podemos usar invocar nuestra API de consumo desde la red local. La llamada local esta protegida con MTLS, por lo que debe usar el certificado y llave que creados en el paso 1:
 ```
-curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/XXXXXX/consulta' -i 'https://localhost/r1/sv-test/GOB/1001/api-pruebas/consulta-pruebas'
+curl -k -E consumidor-api.crt --key consumidor-api.key -X GET -H 'X-Road-Client: sv-test/GOB/XXXXXX/consulta' 
+-i 'https://localhost/r1/sv-test/GOB/1001/api-pruebas/consulta-pruebas'
 ``` 
