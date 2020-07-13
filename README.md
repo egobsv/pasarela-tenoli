@@ -13,7 +13,7 @@
  6. [Revisar Estadísticas de Uso](estadísticas/README.md)
   
 **Requisitos:** 
-* Ubuntu Bionic LTS o superior, Debian 10 (necesita sustituir java11 por java8), RHEL7/Centos7.  
+* Ubuntu Bionic LTS o superior, [Debian 10](instalar-deb.sh) (necesita sustituir java11 por java8), [RHEL7/Centos7](instalar-rpm.sh).  
 * Al menos 3GB Ram y 3GB de disco duro.  
 * Dos direcciones IP: una para acceso a la red interna y otra para acceso a Internet.
 * La IP de acceso público debe tener disponibles los siguientes puertos TCP (ver lista de Acceso):  
