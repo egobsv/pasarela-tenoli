@@ -7,14 +7,15 @@ Tanto la institución que consume como la que ofrece datos administran su propia
 
 La API de consumo es un subsistema vacío, para crearla se pueden seguir las [instrucciones de creación de cliente de la pasarela](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ug-ss_x-road_6_security_server_user_guide.md#4-security-server-clients). Esta API se usará para solicitar acceso a los datos que deseamos conusmir desde un sistema interno.
 
-|Sistema Interno que solicita datos|-----|Pasarela/API de Consumiror|
+```
+|Sistema Interno que solicita datos|---->|Pasarela/API de Consumiror|
    |
    |
 |RED TENOLI|
    |
    |
-|Pasarela/API de Proveedor|---|Sistema Interno que ofrece Datos
-
+|Pasarela/API de Proveedor|---->|Sistema Interno que ofrece Datos
+```
 
 Ejemplo llamada para solicitar datos:
 ```
