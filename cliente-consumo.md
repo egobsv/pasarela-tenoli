@@ -6,7 +6,7 @@
 Tanto la institución que consume como la que ofrece datos administran su propia Pasarela de Seguridad con una API/Cliente disponible para realizar el intercambio. Es responsabilidad del administrador de la API **Consumidor de Servicio** solicitar acceso/autorización para usar API **Proveedor de Servicio** que se desea consumir. 
 
 
-### 2. Crear CLiente/API de Consumidor ###
+### 1. Crear CLiente/API de Consumidor ###
 
 La API de consumo es un Cliente vacío, para crearlo se pueden seguir las [instrucciones de creación de cliente de la pasarela](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ug-ss_x-road_6_security_server_user_guide.md#4-security-server-clients). Esta API se usará para solicitar acceso a los datos que deseamos conusmir desde un sistema interno.
 
