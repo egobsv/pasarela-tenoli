@@ -8,7 +8,9 @@ Tanto la institución que consume como la que ofrece datos administran su propia
 
 ### 1. Crear CLiente/API de Consumidor ###
 
-La API de consumo es un Cliente vacío, para crearlo se pueden seguir las [instrucciones de creación de cliente de la pasarela](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ug-ss_x-road_6_security_server_user_guide.md#4-security-server-clients). Esta API se usará para solicitar acceso a los datos que deseamos conusmir desde un sistema interno.
+La API de consumo es un Cliente vacío, para crearlo desde el menú principal de la pasarela seleccione: Cliente de Servidor de Seguridad, Agregar Cliente, Seleccione Cliente de Lista Global, Buscar (sin ningún valor) y seleccione le primer valor de la lista. El detalle del proceso esta disponible en las [instrucciones de creación de cliente de la pasarela](https://github.com/nordic-institute/X-Road/blob/develop/doc/Manuals/ug-ss_x-road_6_security_server_user_guide.md#4-security-server-clients).
+
+Esta API se usará para solicitar acceso a los datos que deseamos conusmir desde un sistema interno.
 
 ```
 |Sistema Interno que solicita datos|---->|Pasarela/API de Consumiror|
