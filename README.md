@@ -59,11 +59,11 @@ El ancla de  configuración inicial contiene los parámetros de inicio definidos
   
 Descargue, guarde este archivo en su máquina y luego regrese a la página de configuración de su pasarela para que pueda importar el ancla de configuración inicial. Una vez importada el ancla parecerá un formulario que debe ser completado de la siguiente forma:
 
-* Asegurese que elegir GOB como 'Member Class'. 
+* Asegurese que elegir GOB en el campo Clase de Miembro. 
 
-* Ingrese el [código presupuestario](códigos-instituciones.md) asignado por el Ministerio de Hacienda a su institución, por ejemplo, para Ministerio de Hacienda es 111300400.
+* En el campo Código de Miembro, ingrese el [código presupuestario](códigos-instituciones.md) asignado por el Ministerio de Hacienda a su institución, por ejemplo, el código del Ministerio de Hacienda es 111300400. Al ingresar el código, el sistema mostrará automáticamente el nombre de su institución. 
 
-* Ingrese el identificador de su pasarela, este valor será parte del certificado electrónico que identificará a su pasarela. El identificador depende del [código de su institución](códigos-instituciones.md) Por ejemplo: MIHSV111300400-01. 
+* En le campo Código del Servidor de Seguridad, ingrese el identificador de su pasarela, este valor será parte del certificado electrónico que identificará a su pasarela. El identificador depende del [código de su institución](códigos-instituciones.md) Por ejemplo: MIHSV111300400-01. 
 
 * Ingrese el número PIN de acceso para proteger los certificados del servidor. Este PIN será requerido para administrar los certificados de su pasarela.
 
