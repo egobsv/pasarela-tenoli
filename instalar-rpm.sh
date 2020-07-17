@@ -28,7 +28,9 @@ chown xroad:xroad /etc/xroad/autologin;
 echo "1234" >> /etc/xroad/autologin;
 
 #Para REDHAT los puertos estan definidos en /etc/xroad/conf.d/override-rhel-proxy.ini
-# 8080 y 8443
+# 8080 y 8443 son los puertos por defecto
+# Antes de cambiarlos a 80 y 443 desabilite/modifique el servidor por defecto de nginx
+
 
 #Deshabilitar IPv6
 ~# nano /etc/sysctl.conf
