@@ -90,7 +90,9 @@ El sistema genera y descarga automáticamente las peticiones de certificados a s
 
 **4. Finalizar Registro**
 
-Usando los certificados que recibió, ingrese a su pasarela, seleccione la opción 'Llaves y certificados', presione el botón 'importar certificado' y luego importe sus certificados de Autorización y Firma.  
+Usando los certificados que recibió, ingrese a su pasarela, seleccione la opción 'Llaves y certificados', presione el botón 'importar certificado' y luego importe sus certificados de Firma y Autorización.  
+
+Al importar el certificado de Firma se habilita el botón 'activar', asegurese de marcarlo como "Activo".
   
 Con el certificado de Identidad, una vez importado, deberá realizarse el registro de su pasarela. Seleccione el certificado Identidad, y presione el botón 'Activar' y luego 'Registrar'. El estado del certificado cambia a 'registro en progreso'. 
 
