@@ -48,7 +48,7 @@ openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-a
 Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS internos desde el recuadro de configuración de 'Servidores Internos' del servicio en su pasarela.
 
 
-### 3. Autorización de Consumo de API remota###
+### 3. Autorización de Consumo de API remota ###
 *Comunicación entre API/Cliente local de consumo y API/Cliente remoto proveedor de datos*
 
 Antes  de poder consumir un Cliente/API publicado en una pasarela externa, es necesario obtener la autorización del administrador respectivo. 
