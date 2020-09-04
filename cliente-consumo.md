@@ -31,9 +31,9 @@ Donde 1.2.3.4 es la IP de nuestra pasarela. Es posible hacer esta llmada desde l
 
 ### 2. Comunicación interna a API local de consumidor ###
 
-Por defecto, la pasarela únicamente responde a llamadas que incluyan un certificado autorizado (Mutual TLS/HTTPS con autenticación).
+Por defecto, la pasarela únicamente responde a llamadas que incluyan un certificado autorizado (Mutual TLS/HTTPS con autenticación); esto evita que clientes no autorizados dentro de su red consuman este servicio.
 
-En la confiduración de su API/Cliente de consumo, desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. La pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
+En la configuración de su API/Cliente de consumo, desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. La pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
 ```
 {"type":"Server.ClientProxy.SslAuthenticationFailed",
 "message":"Client (SUBSYSTEM:SV/GOB/XXXX/XXXX) specifies HTTPS but did not supply TLS certificate"}
@@ -46,6 +46,8 @@ openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-a
 ```
 
 Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS internos desde el recuadro de configuración de 'Servidores Internos' del servicio en su pasarela.
+
+**Puede cambiar el modo de conexión a HTTPS NO AUTH o HTTP para evitar usar certificados en su red itnerna, pero esto dará acceso libre a su servicio dentro de su red**
 
 
 ### 3. Autorización de Consumo de API remota ###
