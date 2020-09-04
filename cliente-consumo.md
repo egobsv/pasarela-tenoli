@@ -47,7 +47,7 @@ openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-a
 
 Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS internos desde el recuadro de configuración de 'Servidores Internos' del servicio en su pasarela.
 
-**Puede cambiar el modo de conexión a HTTPS NO AUTH o HTTP para evitar usar certificados en su red itnerna, pero esto dará acceso libre a su servicio dentro de su red**
+**Puede cambiar el modo de conexión a HTTPS NO AUTH o HTTP para evitar usar certificados desde su red interna, pero esto dará acceso libre a su servicio dentro de su red**
 
 
 ### 3. Autorización de Consumo de API remota ###
