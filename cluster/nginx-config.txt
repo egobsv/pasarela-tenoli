@@ -1,5 +1,5 @@
 La version libre de NGINX permite hacer balanceo de puertos TCP, solomente es necesario balancear dos puertos 
-(5500,5577) y no debe terminar las conexiones HTTS. La configuración quedaría mas o menos así: 
+(5500,5577) y no debe terminar las conexiones HTTS. La configuración, al final de /etc/nginx/nginx.conf, quedaría mas o menos así: 
 
 stream {
     upstream  tenoli-consultas{
