@@ -23,8 +23,10 @@
 * Lista de Acceso servicios centrales: Completar formulario de registro para recibir IPs 	
 * Lista de Acceso clientes: IPs de insituciones que consuman los servicios de esta pasarela.
 
-* La IP de interna debe tener disponibles los siguientes puertos TCP:  
+* La IP interna debe tener disponibles los siguientes puertos TCP:  
 Ingreso: 80,443
+
+* Para administrar su pasarela el sistema usa el puerto 4000 que debe estar disponible solo en la red local.
 
 El equipo puede ser una maquina virtual o un servidor físico dedicado.  
 
