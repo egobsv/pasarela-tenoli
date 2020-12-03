@@ -48,7 +48,19 @@ Donde 1.2.3.4 es la IP de nuestra pasarela. Es posible hacer esta llamada desde 
 
 Por defecto, la pasarela únicamente responde a llamadas que incluyan un certificado autorizado (Mutual TLS/HTTPS con autenticación); esto evita que clientes no autorizados dentro de su red consuman este servicio.
 
-En la configuración de su API/Cliente de consumo, desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. La pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
+En la configuración de su API/Cliente de consumo
+
+<p align="center">
+  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/muestraClientes.PNG">
+</p>
+
+Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. 
+
+<p align="center">
+  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/configuracionApi.PNG">
+</p>
+
+La pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
 ```
 {"type":"Server.ClientProxy.SslAuthenticationFailed",
 "message":"Client (SUBSYSTEM:SV/GOB/XXXX/XXXX) specifies HTTPS but did not supply TLS certificate"}
@@ -61,6 +73,10 @@ openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-a
 ```
 
 Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS internos desde el recuadro de configuración de 'Servidores Internos' del servicio en su pasarela.
+
+<p align="center">
+  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/certificado.PNG">
+</p>
 
 **Puede cambiar el modo de conexión a HTTPS NO AUTH o HTTP para evitar usar certificados desde su red interna, pero esto dará acceso libre a su servicio dentro de su red**
 
