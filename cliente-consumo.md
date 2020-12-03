@@ -13,13 +13,13 @@ La API de consumo es un Cliente vacío, para crearlo desde el menú principal de
 Cliente de Servidor de Seguridad, Agregar Cliente
 
 <p align="center">
-  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/agregarCliente.PNG">
+  <img width="600" height="450" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/agregarCliente.PNG">
 </p>
 
 Seleccione Cliente de Lista Global, Buscar (sin ningún valor) y seleccione el primer valor de la lista y dar clic en "ok"
 
 <p align="center">
-  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/seleccionarCliente.PNG">
+  <img width="600" height="450" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/seleccionarCliente.PNG">
 </p>
 
 
@@ -51,13 +51,13 @@ Por defecto, la pasarela únicamente responde a llamadas que incluyan un certifi
 En la configuración de su API/Cliente de consumo
 
 <p align="center">
-  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/muestraClientes.PNG">
+  <img width="600" height="450" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/muestraClientes.PNG">
 </p>
 
 Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. 
 
 <p align="center">
-  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/configuracionApi.PNG">
+  <img width="600" height="450" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/configuracionApi.PNG">
 </p>
 
 La pasarela espera recibir un certificado autorizado en cada llamada, de lo contrario responde con el siguiente mensaje:
@@ -75,7 +75,7 @@ openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout consumidor-a
 Asegurase de subir el archivo consumidor-api.crt a la lista de certificados TLS internos desde el recuadro de configuración de 'Servidores Internos' del servicio en su pasarela.
 
 <p align="center">
-  <img width="550" height="350" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/certificado.PNG">
+  <img width="600" height="450" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/certificado.PNG">
 </p>
 
 **Puede cambiar el modo de conexión a HTTPS NO AUTH o HTTP para evitar usar certificados desde su red interna, pero esto dará acceso libre a su servicio dentro de su red**
