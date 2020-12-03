@@ -51,7 +51,7 @@ Por defecto, la pasarela únicamente responde a llamadas que incluyan un certifi
 En la configuración de su API/Cliente de consumo
 
 <p align="center">
-  <img width="600" height="450" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/muestraClientes.PNG">
+  <img width="600" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/muestraClientes.PNG">
 </p>
 
 Desde la ventana de configuración del sistema, en la pestaña "Servidores Internos" se debe definir el modo de conexión interno, por defecto es HTTPS con autenticación. 
