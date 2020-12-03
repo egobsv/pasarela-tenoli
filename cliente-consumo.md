@@ -13,13 +13,13 @@ La API de consumo es un Cliente vacío, para crearlo desde el menú principal de
 Cliente de Servidor de Seguridad, Agregar Cliente
 
 <p align="center">
-  <img width="689" height="578" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/agregarCliente.PNG">
+  <img width="689" height="400" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/agregarCliente.PNG">
 </p>
 
 Seleccione Cliente de Lista Global, Buscar (sin ningún valor) y seleccione el primer valor de la lista y dar clic en "ok"
 
 <p align="center">
-  <img width="689" height="578" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/seleccionarCliente.PNG">
+  <img width="689" height="400" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/seleccionarCliente.PNG">
 </p>
 
 
