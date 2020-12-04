@@ -46,7 +46,7 @@ El certificado debe ser el mismo que utiliza el servidor donde reside la API de 
 Desde la ventana de configuración, seleccione "Servidors Internos", presione el botón agregar y suba el certificado correspondiente.  Si su API no utiliza autorización mutua TLS, la configuración esta terminada.   
 
 <p align="center">
-  <img width="600"  src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/noAuth.PNG">
+  <img width="600"  src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/importCert.PNG">
 </p>
 
 
@@ -70,7 +70,7 @@ La petición/soliciud de certificado debe ser firmada por la Autoridad Certifica
 La pasarela de seguridad del Proveedor necesita obtener un certificado autorizado; para esto desde la pasarela se debe generar la solicitud de certificado (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, generar petición de certificado). 
 
 <p align="center">
-  <img width="600"  src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/noAuth.PNG">
+  <img width="600"  src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/generarPeticion.PNG">
 </p>
 
 El siguiente comando firma la solicitud 'pasarela.p10' y genera el archivo 'pasarela-autorizada.crt' que debe ser instalado en la pasarela (Menu Principal, Parámetros del Sistema, Certificado TLS Interno, Importar).  
