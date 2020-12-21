@@ -34,7 +34,6 @@ Conceptos generales de la plataforma nacional de interoperabildad.
   <img width="689" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/tenoli1.png">
 </p>
 
-     Sistema Consumidor ---- TUNEL (M)TLS --> Pasarela de Seguridad Consumidor
 
 2. El tunel TLS entre Pasarelas de Seguridad (2) utiliza los certificados frimados por la autoridad cetificadora de Presidencia.
 
@@ -42,11 +41,11 @@ Conceptos generales de la plataforma nacional de interoperabildad.
   <img width="689" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/tenoli2.png">
 </p>
 
-   Pasarela de Seguridad Consumidor  ---- TLS/SERVICIOS DE CONFIANZA --> Pasarela de Seguridad Proveedor
+
 
 3. El tunel de red local del proveedor (3) utiliza  un certificado autofirmado que debe ser instalado en la pasarela y debe estar autorizado por el servidor web que recibe la petición (Sistema Proveedor).  
 
 <p align="center">
   <img width="689" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/tenoli3.png">
 </p>
-     Pasarela de Seguridad Proveedor ---- TUNEL (M)TLS --> Sistema Proveedor 
+
