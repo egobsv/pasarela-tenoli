@@ -28,12 +28,29 @@ Conceptos generales de la plataforma nacional de interoperabildad.
 
 ## 2. Modelo de Seguridad de Mensajes ##
 
-1. Sistema Consumidor ---- TUNEL (M)TLS --> Pasarela de Seguridad Consumidor
+1. El tunel de red local del consuimidor (1) utiliza  un certificado autofirmado que debe ser instalado en la pasarela.  
 
-2. Pasarela de Seguridad Consumidor  ---- TLS/SERVICIOS DE CONFIANZA --> Pasarela de Seguridad Proveedor
+<p align="center">
+  <img width="689" height="578" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/tenoli1.png">
+</p>
 
-3. Pasarela de Seguridad Proveedor ---- TUNEL (M)TLS --> Sistema Proveedor 
+     Sistema Consumidor ---- TUNEL (M)TLS --> Pasarela de Seguridad Consumidor
+
+2. El tunel TLS entre Pasarelas de Seguridad (2) utiliza los certificados frimados por la autoridad cetificadora de Presidencia.
+
+<p align="center">
+  <img width="689" height="578" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/tenoli2.png">
+</p>
+
+Pasarela de Seguridad Consumidor  ---- TLS/SERVICIOS DE CONFIANZA --> Pasarela de Seguridad Proveedor
+
+3. El tunel de red local del proveedor (3) utiliza  un certificado autofirmado que debe ser instalado en la pasarela y debe estar autorizado por el servidor web que recibe la petición (Sistema Proveedor).  
+
+<p align="center">
+  <img width="689" height="578" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/tenoli3.png">
+</p>
+Pasarela de Seguridad Proveedor ---- TUNEL (M)TLS --> Sistema Proveedor 
 
 - El tunel TLS entre Pasarelas de Seguridad (2) utiliza los certificados frimados por la autoridad cetificadora de Presidencia. 
-- El tunel de red local del consuimidor (1) utiliza  un certificado autofirmado que debe ser instalado en la pasarela.  
+- 
 - El tunel de red local del proveedor (3) utiliza  un certificado autofirmado que debe ser instalado en la pasarela y debe estar autorizado por el servidor web que recibe la petición (Sistema Proveedor).  
