@@ -8,11 +8,11 @@
     text-align: center;
     /*background-color: red;*/
     background-color: #343a40;
-    background-image: linear-gradient(120deg, black, #343a40);
+    background-image: linear-gradient(120deg, #343a40, black);
     
     /*background-image: url("{{ site.url }}/pasarela-tenoli/assets/img/banner.jpg");*/
     /*background-size: 1080px 385px;*/
-    background-size: 80% 300px;
+    background-size: 100% 300px;
 }
 
 .project-name {
