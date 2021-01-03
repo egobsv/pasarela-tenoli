@@ -32,15 +32,7 @@ Esta API se usará para solicitar acceso a los datos que deseamos consumir desde
 </p>
 
 
-```
-|Sistema Interno que solicita datos|---->|Pasarela/API de Consumidor|
-   |
-   |
-|RED TENOLI|
-   |
-   |
-|Pasarela/API de Proveedor|---->|Sistema Interno que ofrece Datos
-```
+
 
 Ejemplo llamada para solicitar datos:
 ```
