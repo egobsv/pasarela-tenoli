@@ -27,6 +27,11 @@ El detalle del proceso esta disponible en las [instrucciones de creación de cli
 
 Esta API se usará para solicitar acceso a los datos que deseamos consumir desde un sistema interno.
 
+<p align="center">
+  <img width="689" src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/tenoli4.png">
+</p>
+
+
 ```
 |Sistema Interno que solicita datos|---->|Pasarela/API de Consumidor|
    |
