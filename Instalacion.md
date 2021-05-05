@@ -25,7 +25,7 @@ nota: El equipo puede ser una maquina virtual o un servidor físico dedicado.
 
 #`apt-get install -y unzip;`
 
-#`unzip master.zip;mv pasarela-tenoli-master tenoli;
+#`unzip master.zip;mv pasarela-tenoli-master tenoli;`
 
 2. Descargue los paquetes DEB (o RPMS)y guárdelos en su servidor usando los siguientes comandos:
 
