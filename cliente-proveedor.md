@@ -77,6 +77,7 @@ El siguiente comando firma la solicitud 'pasarela.p10' y genera el archivo 'pasa
 <p align="center">
   <img width="600"  src="https://raw.githubusercontent.com/egobsv/pasarela-tenoli/master/imagenes/importarCert.PNG">
 </p>
+
 ```
 openssl x509 -req -days 365 -in /var/tmp/pasarela.p10 -CA /etc/ssl/certs/api-ac.crt -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /var/tmp/pasarela-autorizada.crt;
 ```
