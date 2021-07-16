@@ -13,8 +13,8 @@ La Pasarela de Seguriad ofrece tres modos de conexión hacia sistemas en su red 
 
 |Modo|Protocolo| Seguridad|
 |-----|------|------|
-|HTTPS| HTTPS y autenticación de cliente (MTLS)| Nivel alto de seguridad|
-|HTTPS NOAUTH| HTTPS |Nivel básico de seguridad|
+|HTTPS| HTTPS con certificado reconocido y autenticación de cliente (MTLS)| Nivel alto de seguridad|
+|HTTPS NOAUTH| HTTPS con certificado reconocido |Nivel básico de seguridad|
 |HTTP|HTTP en texto plano| Inseguro, no recomendado|
 
 El modo de conexión se configura en la pestaña "Servidores Internos" de su servicio. El modo por defecto que utiliza la pasarela es HTTPS, es decir el más alto, este el nivel recomendado para ambientes en producción. La configruación del servidor que ofrece la API en su red interna deber corresponder al modo de conexión seleccionado.
