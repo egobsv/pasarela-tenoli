@@ -49,7 +49,7 @@ openssl x509 -req -days 365 -in /etc/ssl/certs/server-web.csr -CA /etc/ssl/certs
 Crear archivo de configuración de host virtual usando un puerto disponible (ej 9443):
 
 ```
-##Host Virtual /etc/nignx/sites-enabled/ejemplo-xroad
+##Host Virtual /etc/nginx/conf.d/ejemplo-xroad
 server {
         listen 9443 ssl;
         ssl_certificate /etc/ssl/certs/server-web.crt;
