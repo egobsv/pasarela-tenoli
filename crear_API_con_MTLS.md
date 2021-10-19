@@ -102,5 +102,5 @@ openssl x509 -req -days 365 -in /etc/ssl/certs/cliente.csr -CA /etc/ssl/certs/ap
 ```
 Invocar la API enviando un certificado de cliente autorizado:
 ```
-~# curl -k -E /etc/ssl/certs/cliente.crt--key /etc/ssl/private/cliente.key -k https://localhost:9443/;
+~# curl -k -E /etc/ssl/certs/cliente.crt --key /etc/ssl/private/cliente.key https://localhost:9443/;
 ```
