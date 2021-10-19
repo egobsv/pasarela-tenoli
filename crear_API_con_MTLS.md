@@ -27,7 +27,7 @@ echo "\n".$data;
 {"nombre":"Pedro Paramo","nit":"012345012345","dui":"0987654321"} 
 ```
 
-**Servidor HTTPS**
+**Autoridad Certificadora y Servicio Web**
 
 Para servir nuestra API vamos a crear un Host virtual en Nginx. El primer paso es crear los certificados que utilizaremos en el servicio https.   
 
@@ -49,6 +49,8 @@ openssl x509 -req -days 365 -in /etc/ssl/certs/server-web.csr -CA /etc/ssl/certs
 
 ~#openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048;
 ```
+
+**Configurar HTTPS en NGINX**
 
 Crear archivo de configuración de host virtual usando un puerto disponible (ej 9443):
 
