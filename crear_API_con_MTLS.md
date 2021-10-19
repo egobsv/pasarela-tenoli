@@ -36,14 +36,18 @@ Para servir nuestra API vamos a crear un Host virtual en Nginx. El primer paso e
 ```
 echo "####Autoridad Certificadora:'
 openssl genrsa -out /etc/ssl/private/api-ac.key 4096;
-openssl req -new -x509 -days 365 -key /etc/ssl/private/api-ac.key -out /etc/ssl/certs/api-ac.crt -subj "/C=SV/O=Gobierno de El Salvador/O=Min xxx/OU=CERTIFICADO AUTOFRIMADO/CN=Autoridad certificadora";
+openssl req -new -x509 -days 365 -key /etc/ssl/private/api-ac.key -out /etc/ssl/certs/api-ac.crt \
+       -subj "/C=SV/O=Gobierno de El Salvador/O=Min xxx/OU=CERTIFICADO AUTOFRIMADO/CN=Autoridad certificadora";
 
 echo "####Certificado de Servidor Web";
 openssl genrsa -out /etc/ssl/private/servidor-web.key 2048;
-openssl req -new -key /etc/ssl/private/servidor-web.key -out /etc/ssl/certs/server-web.csr -subj "/C=SV/O=Gobierno de El Salvador/O=MIN xx/OU=CERTIFICADO AUTOFRIMADO/CN=Servidor HTTPS local";
-openssl x509 -req -days 365 -in /etc/ssl/certs/server-web.csr -CA /etc/ssl/certs/api-ac.crt -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /etc/ssl/certs/server-web.crt;
+openssl req -new -key /etc/ssl/private/servidor-web.key -out /etc/ssl/certs/server-web.csr \
+        -subj "/C=SV/O=Gobierno de El Salvador/O=MIN xx/OU=CERTIFICADO AUTOFRIMADO/CN=Servidor HTTPS local";
+        
+openssl x509 -req -days 365 -in /etc/ssl/certs/server-web.csr -CA /etc/ssl/certs/api-ac.crt \
+             -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /etc/ssl/certs/server-web.crt;
 
-~#openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+~#openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048;
 ```
 
 Crear archivo de configuración de host virtual usando un puerto disponible (ej 9443):
@@ -97,8 +101,11 @@ Al llamar la api sin un certificado autorizado, el servidor responderá con un e
 **Crear certificado de cliente autorizado**
 ```
 openssl genrsa -out /etc/ssl/private/cliente.key 2048;
-openssl req -new -key /etc/ssl/private/cliente.key -out /etc/ssl/certs/cliente.csr -subj "/C=SV/O=Gobierno de El Salvador/O=MIN xx/OU=CERTIFICADO AUTOFRIMADO/CN=Cliente Autorizado";
-openssl x509 -req -days 365 -in /etc/ssl/certs/cliente.csr -CA /etc/ssl/certs/api-ac.crt -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /etc/ssl/certs/cliente.crt;
+openssl req -new -key /etc/ssl/private/cliente.key -out /etc/ssl/certs/cliente.csr \
+       -subj "/C=SV/O=Gobierno de El Salvador/O=MIN xx/OU=CERTIFICADO AUTOFRIMADO/CN=Cliente Autorizado";
+
+openssl x509 -req -days 365 -in /etc/ssl/certs/cliente.csr -CA /etc/ssl/certs/api-ac.crt 
+             -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /etc/ssl/certs/cliente.crt;
 ```
 Invocar la API enviando un certificado de cliente autorizado:
 ```
