@@ -9,11 +9,12 @@ Esta guía usa PHP y Nginx, es posible configurar identificación mútua TLS en 
 
 El servicio de ejemplo utiliza un script PHP para regresar un objeto JSON con valores estaticos.
 ```
-~# apt-get install php7.2 php7.2-fpm
+~# apt install php php-fpm
 
 ~#nano /var/www/html/index.php:
 
  <?php 
+$json = new stdClass();
 $json->nombre = "Pedro Paramo";
 $json->nit = "012345012345";
 $json->dui = "0987654321";
@@ -21,7 +22,7 @@ $data = json_encode($json);
 echo "\n".$data; 
 ?> 
  
-~# php7.2 /var/www/html/index.php
+~# php7.3 /var/www/html/index.php
 
 {"nombre":"Pedro Paramo","nit":"012345012345","dui":"0987654321"} 
 ```
