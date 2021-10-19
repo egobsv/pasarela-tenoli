@@ -49,7 +49,7 @@ openssl x509 -req -days 365 -in /etc/ssl/certs/server-web.csr -CA /etc/ssl/certs
 Crear archivo de configuración de host virtual usando un puerto disponible (ej 9443):
 
 ```
-##Host Virtual /etc/nginx/conf.d/ejemplo-xroad
+##Host Virtual /etc/nginx/conf.d/ejemplo-xroad.conf
 server {
         listen 9443 ssl;
         ssl_certificate /etc/ssl/certs/server-web.crt;
@@ -77,7 +77,7 @@ server {
 
         location ~ \.php$ {
         include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
         }
 }
 
