@@ -100,14 +100,16 @@ Al llamar la api sin un certificado autorizado, el servidor responderá con un e
 ```
 **Crear certificado de cliente autorizado**
 ```
+##Cliente Genera su llave Privada y una Solicitud de Certificado
 openssl genrsa -out /etc/ssl/private/cliente.key 2048;
 openssl req -new -key /etc/ssl/private/cliente.key -out /etc/ssl/certs/cliente.csr \
        -subj "/C=SV/O=Gobierno de El Salvador/O=MIN xx/OU=CERTIFICADO AUTOFRIMADO/CN=Cliente Autorizado";
 
+##Autoridad usa/sella solicitud para generar certificado 
 openssl x509 -req -days 365 -in /etc/ssl/certs/cliente.csr -CA /etc/ssl/certs/api-ac.crt 
              -CAkey /etc/ssl/private/api-ac.key -set_serial 01 -out /etc/ssl/certs/cliente.crt;
 ```
-Invocar la API enviando un certificado de cliente autorizado:
+Cliente recibe certificado y lo usa para invocar la API:
 ```
 ~# curl -k -E /etc/ssl/certs/cliente.crt --key /etc/ssl/private/cliente.key https://localhost:9443/;
 ```
